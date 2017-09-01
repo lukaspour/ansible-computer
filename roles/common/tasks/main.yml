@@ -15,13 +15,8 @@
   become: true
   with_items:
     - iperf
-    - exim4
-    - exim4-config
-    - exim4-daemon-light
-    - exim4-base
-    - ntop
-    - fail2ban
-    - logcheck
+    - aisleriot
+    - webbrowser-app
 
 - name: Install important utilities
   apt:
@@ -32,6 +27,7 @@
     force=no
   become: true
   with_items:
+    - aptitude
     - bash-completion
     - build-essential
     - git
