@@ -1,0 +1,63 @@
+---
+- name: update all packages to latest version
+  apt: 
+    upgrade=dist
+    update_cache=yes
+    cache_valid_time=3600 
+    autoremove=yes
+
+- name: Remove useless apps
+  apt:
+    pkg="{{item}}"
+    state=absent
+    update_cache=true
+    purge=yes
+  become: true
+  with_items:
+    - iperf
+    - exim4
+    - exim4-config
+    - exim4-daemon-light
+    - exim4-base
+    - ntop
+    - fail2ban
+    - logcheck
+
+- name: Install important utilities
+  apt:
+    pkg="{{item}}"
+    state=latest 
+    cache_valid_time=3600 
+    update_cache=true
+    force=no
+  become: true
+  with_items:
+    - bash-completion
+    - build-essential
+    - git
+    - htop
+    - iftop
+    - iotop
+    - iptraf
+    - elinks
+    - mc
+    - mtr
+    # ncdu: ukazatel obsazeneho mista na disku - moc uzitecne
+    - ncdu
+    # nethogs: monitors network activity of each process
+    - nethogs
+    # nload: network monitor which simply shows TX and RX
+    - nload
+    - nmap
+    # ntp: network time protocol
+    - ntp
+    # openssl: using as secured telnet: openssl s_client ....
+    - openssl
+    - screen
+    # systat: iostat: io monitoring
+    - sysstat
+    - tcpdump
+    - telnet
+    - tmux
+    - unzip
+

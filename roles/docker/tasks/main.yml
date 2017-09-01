@@ -1,0 +1,47 @@
+---
+
+- name: install some small important packages
+  become: true
+  apt: name={{item}} state=present
+  with_items:
+    - ack-grep
+    - composer
+    - curl
+    - make
+    # ...
+
+- name: Install slack
+  apt:
+    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-2.1.0-amd64.deb
+    state: present
+  become: true
+
+- name: Install ssh keys
+  copy:
+    src: "ssh/{{ item }}"
+    mode: "0644"
+    dest: /home/odolbeau/.ssh/
+  with_items:
+    - id_rsa
+    - id_rsa.pub
+
+- name: Install ssh config
+  copy:
+    src: "ssh/config"
+    mode: "0644"
+    dest: /home/odolbeau/.ssh/
+
+- name: Download dot files from github
+  git: repo=ssh://git@github.com/odolbeau/dot-files.git dest=/home/odolbeau/dot-files
+
+- name: Install dot files
+  command: make -C /home/odolbeau/dot-files install
+
+- name: Download VIM configuration from github
+  git: repo=ssh://git@github.com/odolbeau/vim-config.git dest=/home/odolbeau/vim-config
+
+- name: Install VIM configuration
+  command: make -C /home/odolbeau/vim-config install
+
+- include: nginx.yml
+
