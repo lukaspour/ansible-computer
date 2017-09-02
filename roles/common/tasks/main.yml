@@ -67,6 +67,7 @@
     - hplip
     - hplip-data
     - preload
+    - powertop
     - ubuntu-restricted-extras
 
 - name: "Mount options for /"
