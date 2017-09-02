@@ -1,5 +1,5 @@
 ---
-- name: add repository keys from ubuntu ppa 
+- name: add repository keys
   apt_key:
       keyserver: keyserver.ubuntu.com
       id: 'ACCAF35C'
@@ -33,6 +33,7 @@
     - Music
     - Videos
     - .ssh
+    - .openvpn
 
 - name: remove unused folders
   file:

@@ -1,14 +1,15 @@
 ---
 - name: check if package is already installed
-  command: dpkg-query -W slack*
+  command: dpkg-query -W skype*
   register: check
   failed_when: false
   changed_when: false
 
-- name: Install slack
+- name: Install package
   apt:
-    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-2.7.1-amd64.deb
+    deb: https://go.skype.com/skypeforlinux-64.deb
     state: present
+    allow_unauthenticated: yes
   when: check.rc == 1
   become: true
 

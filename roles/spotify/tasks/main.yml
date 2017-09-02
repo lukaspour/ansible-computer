@@ -1,0 +1,33 @@
+---
+- name: add repository keys
+  apt_key:
+      keyserver: keyserver.ubuntu.com
+      id: 'BBEBDCB318AD50EC6865090613B00F1FD2C19886'
+
+- name: add repository keys
+  apt_key:
+      keyserver: keyserver.ubuntu.com
+      id: '0DF731E45CE24F27EEEB1450EFDC8610341D9410'
+
+- name: Add source repository
+  apt_repository:
+    repo: deb http://repository.spotify.com stable non-free
+    state: present
+
+- name: check if package is already installed
+  command: dpkg-query -W spotify*
+  register: check
+  failed_when: false
+  changed_when: false
+
+- name: Install Spotify
+  apt:
+    pkg="{{item}}"
+    state=latest 
+    cache_valid_time=3600 
+    update_cache=true
+    force=no
+  become: true
+  when: check.rc == 1
+  with_items:
+    - spotify-client

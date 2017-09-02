@@ -1,13 +1,13 @@
 ---
 - name: check if package is already installed
-  command: dpkg-query -W slack*
+  command: dpkg-query -W teamviewer*
   register: check
   failed_when: false
   changed_when: false
 
-- name: Install slack
+- name: Install package
   apt:
-    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-2.7.1-amd64.deb
+    deb: https://download.teamviewer.com/download/teamviewer_i386.deb
     state: present
   when: check.rc == 1
   become: true
