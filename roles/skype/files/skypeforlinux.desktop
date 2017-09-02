@@ -1,0 +1,43 @@
+[Desktop Entry]
+Name=Skype for Linux Beta
+Name[en]=Skype for Linux Beta
+Name[de]=Skype für Linux Beta
+Name[es]=Skype para Linux Beta
+Name[fr]=Skype pour Linux Beta
+Name[hi]=Linux बीटा के लिए Skype
+Name[it]=Skype per Linux Beta
+Name[nl]=Skype voor Linux Beta
+Name[pt_BR]=Skype para Linux Beta
+Name[ru]=Skype для Linux Beta
+Name[sv]=Skype för Linux Beta
+Name[uk]=Skype для Linux Beta
+Name[zh_CN]=Skype for Linux Beta
+Comment=Skype Internet Telephony
+Exec=/usr/bin/skypeforlinux %U
+Icon=skypeforlinux
+Terminal=false
+Type=Application
+StartupNotify=true
+Encoding=UTF-8
+Categories=Network;Application;
+MimeType=x-scheme-handler/skype;
+X-KDE-Protocols=skype
+Actions=QuitSkype;
+
+[Desktop Action QuitSkype]
+Name=Quit Skype
+Name[en]=Quit Skype
+Name[de]=Skype beenden
+Name[es]=Salir de Skype
+Name[fr]=Quitter Skype
+Name[hi]=Skype से बाहर निकलें
+Name[it]=Esci da Skype
+Name[nl]=Skype afsluiten
+Name[pt_BR]=Sair do Skype
+Name[ru]=Выйти из Skype
+Name[sv]=Avsluta Skype
+Name[uk]=Вийти зі Skype
+Name[zh_CN]=退出 Skype
+Exec=/usr/bin/skypeforlinux --shutdown
+OnlyShowIn=Unity;
+

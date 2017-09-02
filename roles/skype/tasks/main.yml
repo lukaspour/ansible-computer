@@ -13,3 +13,11 @@
   when: check.rc == 1
   become: true
 
+- name: Setup autostart
+  copy:
+    src: "{{ role_path }}/files/skypeforlinux.desktop"
+    dest: "~/.config/autostart/skypeforlinux.desktop"
+    owner: 1000
+    group: 1000
+    mode: 0644
+
