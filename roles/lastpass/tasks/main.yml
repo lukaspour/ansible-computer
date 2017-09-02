@@ -7,3 +7,5 @@
 
 - name: install lastpass
   shell: cd /tmp/lplinux && ./install_lastpass.sh
+  become: true
+  become_user: 1000
