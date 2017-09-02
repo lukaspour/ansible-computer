@@ -1,0 +1,9 @@
+---
+- name: Set MATE Tweak layout
+  copy:
+    src: "{{ role_path }}/files/"
+    dest: "/usr/share/mate-panel/layouts/"
+    directory_mode: yes
+    owner: root
+    group: root
+    mode: 0664    

@@ -20,3 +20,24 @@
   with_items:
     - insync
 
+- name: Create Folder Symlinks
+  file:
+    src: "~/lukaspour@gmail.com/{{item}}"
+    dest: "~/{{item}}"
+    force: yes
+    state: link
+  with_items:
+    - Desktop
+    - Pictures
+    - Documents
+    - Music
+    - Videos
+    - .ssh
+
+- name: remove unused folders
+  file:
+    path: "~/{{item}}"
+    state: absent
+  with_items:
+    - Templates
+    - Public

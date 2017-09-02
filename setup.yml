@@ -2,9 +2,10 @@
 
 - hosts: all
   roles:
-    - common
-    - docker
-    - slack
-    - insync
-    - laptop
-    - git
+    - {role: 'common', tags: 'common', 'all'}
+    - {role: 'docker', tags: 'docker', 'all'}
+    - {role: 'slack', tags: 'slack', 'all'}
+    - {role: 'insync', tags: 'insync', 'all'}
+    - {role: 'laptop', tags: 'laptop', 'all'}
+    - {role: 'git', tags: 'git', 'all'}
+    - {role: 'mate', tags: 'mate', 'all'}
