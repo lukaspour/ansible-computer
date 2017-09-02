@@ -1,0 +1,34 @@
+---
+- name: Install git
+  apt:
+    pkg="{{item}}"
+    state=latest 
+    cache_valid_time=3600 
+    update_cache=true
+    force=no
+  become: true
+  with_items:
+    - git
+
+- name: setup git
+  git_config:
+    name: alias.ci
+    scope: global
+    value: commit
+
+- git_config:
+    name: alias.st
+    scope: global
+    value: status
+
+- git_config:
+    name: user.email
+    scope: global
+    value: 'lukaspour@gmail.com'
+
+- git_config:
+    name: user.name
+    scope: global
+    value: 'Lukas Pour'
+
+

@@ -17,6 +17,7 @@
     - iperf
     - aisleriot
     - webbrowser-app
+    - pidgin*
 
 - name: Install important utilities
   apt:
@@ -56,4 +57,5 @@
     - telnet
     - tmux
     - unzip
+    
 
