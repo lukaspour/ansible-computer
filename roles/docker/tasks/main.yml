@@ -44,3 +44,7 @@
     dest: /etc/bash_completion.d/docker-compose
     mode: '0644'
 
+- name: allow this user to run docker as root
+  command: usermod -aG docker {{ username }}
+  become: true
+

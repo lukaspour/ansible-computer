@@ -14,6 +14,7 @@
   with_items:
     - tlp
     - tlp-rdw
+    - powertop
 
 - name: Add TLP config
   copy:

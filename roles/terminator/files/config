@@ -1,5 +1,6 @@
 [global_config]
   always_split_with_profile = True
+  enabled_plugins = InactivityWatch, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
 [keybindings]
 [layouts]
   [[default]]

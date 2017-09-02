@@ -1,9 +1,0 @@
----
-  - name: check if teamviewer package is already installed     command: dpkg-query -W teamviewer     register: check_teamviewer     failed_when: false     changed_when: false
-
-- name: Install Chrome
-  apt:
-    deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    state: present
-  become: true
-

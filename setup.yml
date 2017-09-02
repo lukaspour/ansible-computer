@@ -1,6 +1,11 @@
 ---
 
 - hosts: all
+  vars:
+    username: lukas
+    git_user: "Lukas Pour"
+    git_email: "lukaspour@gmail.com"
+    insync_folder: "lukaspour@gmail.com"
   roles:
     - {role: 'common', tags: 'common', 'all'}
     - {role: 'docker', tags: 'docker', 'all'}
@@ -19,4 +24,4 @@
     - {role: 'vim', tags: 'vim', 'all'}
     - {role: 'lastpass', tags: 'lastpass', 'all'}
     - {role: 'terminator', tags: 'terminator', 'all'}
-    - {role: 'wwan', tags: 'wwan', 'all'}
+    - {role: 'wwan', tags: 'wwan', 'all'} # FIX WWAN ON DELL E7440

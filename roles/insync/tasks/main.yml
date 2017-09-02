@@ -22,7 +22,7 @@
 
 - name: Create Folder Symlinks
   file:
-    src: "~/lukaspour@gmail.com/{{item}}"
+    src: "~/{{insync_folder}}/{{item}}"
     dest: "~/{{item}}"
     force: yes
     state: link

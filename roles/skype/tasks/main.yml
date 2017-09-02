@@ -17,7 +17,7 @@
   copy:
     src: "{{ role_path }}/files/skypeforlinux.desktop"
     dest: "~/.config/autostart/skypeforlinux.desktop"
-    owner: 1000
-    group: 1000
+    owner: "{{username}}"
+    group: "{{username}}"
     mode: 0644
 

@@ -16,7 +16,7 @@
   copy:
     src: "{{ role_path }}/files/slack.desktop"
     dest: "~/.config/autostart/slack.desktop"
-    owner: 1000
-    group: 1000
+    owner: "{{username}}"
+    group: "{{username}}"
     mode: 0644
 

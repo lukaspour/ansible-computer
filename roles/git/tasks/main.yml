@@ -24,12 +24,12 @@
 - git_config:
     name: user.email
     scope: global
-    value: 'lukaspour@gmail.com'
+    value: "{{git_email}}"
 
 - git_config:
     name: user.name
     scope: global
-    value: 'Lukas Pour'
+    value: "{{git_user}}"
 
 - git_config:
     name: push.default
