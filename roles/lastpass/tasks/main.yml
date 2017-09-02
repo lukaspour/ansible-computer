@@ -1,0 +1,9 @@
+---
+- name: Download install file
+  unarchive:
+    src: https://lastpass.com/lplinux.tar.bz2
+    dest: /tmp
+    remote_src: true
+
+- name: install lastpass
+  shell: cd /tmp/lplinux && ./install_lastpass.sh

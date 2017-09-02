@@ -15,3 +15,11 @@
   with_items:
     - shutter
 
+- name: Setup autostart
+  copy:
+    src: "{{ role_path }}/files/shutter.desktop"
+    dest: "~/.config/autostart/shutter.desktop"
+    owner: 1000
+    group: 1000
+    mode: 0644
+

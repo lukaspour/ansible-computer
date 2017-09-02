@@ -1,4 +1,8 @@
 ---
+- name: Add source repository
+  apt_repository:
+    repo: 'ppa:linrunner/tlp'
+
 - name: Install important utilities
   apt:
     pkg="{{item}}"
@@ -9,3 +13,13 @@
   become: true
   with_items:
     - tlp
+    - tlp-rdw
+
+- name: Add TLP config
+  copy:
+    src: "{{ role_path }}/files/tlp"
+    dest: "/etc/default/tlp"
+    owner: root
+    group: root
+    mode: 0644
+

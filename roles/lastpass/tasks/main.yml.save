@@ -1,0 +1,13 @@
+---
+- name: Download install file
+  get_url:
+    url: https://lastpass.com/lplinux.tar.bz2
+    dest: ~/lplinux.tar.bz2
+
+- name: extract lastpass
+  unarchive:
+    src: lplinux.tar.bz2
+    dest: ~/
+
+- name: install lastpass
+  command: cd lplinux && ./install_lastpass.sh

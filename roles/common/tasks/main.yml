@@ -18,6 +18,9 @@
     - aisleriot
     - webbrowser-app
     - pidgin*
+    - brasero*
+    - mono-*
+    - ubuntu-mate-welcome
 
 - name: Install important utilities
   apt:
@@ -29,6 +32,7 @@
   become: true
   with_items:
     - aptitude
+    - python-jmespath
     - bash-completion
     - build-essential
     - git
@@ -61,3 +65,75 @@
     - pinta
     - filezilla
     - hplip
+    - hplip-data
+    - preload
+    - ubuntu-restricted-extras
+    - terminator
+
+- name: "Mount options for /"
+  mount:
+    path: "/"
+    src: "UUID={{ ansible_mounts | json_query('[?mount == `/`] | [0].uuid') }}"
+    fstype: "ext4"
+    opts: "errors=remount-ro,barrier=0"
+    state: "present"
+
+- name: Add SSD scheduler config
+  copy:
+    src: "{{ role_path }}/files/60-ssd-scheduler.rules"
+    dest: "/etc/udev/rules.d/60-ssd-scheduler.rules"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Add custom sysctl config
+  copy:
+    src: "{{ role_path }}/files/sysctl.local.conf"
+    dest: "/etc/sysctl.d/sysctl.local.conf"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Run trim more often
+  command: mv -v /etc/cron.weekly/fstrim /etc/cron.daily
+  ignore_errors: yes  
+
+- name: replace default grub GRUB_CMDLINE_LINUX_DEFAULT
+  lineinfile:
+    path: /etc/default/grub
+    regexp: '^GRUB_CMDLINE_LINUX_DEFAULT='
+    line: 'GRUB_CMDLINE_LINUX_DEFAULT=""'
+
+- name: replace default grub GRUB_GFXMODE
+  lineinfile:
+    path: /etc/default/grub
+    regexp: 'GRUB_GFXMODE='
+    line: 'GRUB_GFXMODE=auto'
+
+- name: Update grub
+  command: update-grub
+
+- name: Enable the key combination Ctrl+Alt+Backspace
+  lineinfile:
+    path: /etc/default/keyboard
+    regexp: '^XKBOPTIONS=""'
+    line: 'XKBOPTIONS="terminate:ctrl_alt_bksp"'
+
+- name: Enable UFW firewall
+  command: ufw enable
+
+- name: setup /tmp as ramdisk
+  mount:
+    path: /tmp
+    src: tmpfs
+    fstype: tmpfs
+    opts: rw,nodev,nosuid,size=1024M
+    state: mounted
+
+- name: setup /var/tmp as ramdisk
+  mount:
+    path: /var/tmp
+    src: /tmp
+    fstype: tmpfs
+    opts: rw,nodev,nosuid,size=1024M
+    state: mounted

@@ -1,0 +1,26 @@
+---
+- name: Install needed packages
+  apt:
+    pkg="{{item}}"
+    state=installed
+    cache_valid_time=3600
+    update_cache=true
+  with_items:
+    - vim
+
+- name: create ~/.vim_auto_backups folder
+  file:
+    state=directory
+    dest=~/.vim_auto_backups
+    mode=0700
+
+- name: copy setting to ~/.vim folder
+  action: copy src="{{ role_path }}/files/.vim"
+    dest=~/
+    mode=644
+
+- name: copy setting to ~/.vimrc file
+  action: copy src=.vimrc
+    dest=~/.vimrc
+    mode=644
+

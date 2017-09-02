@@ -16,3 +16,5 @@
     - {role: 'virtualbox', tags: 'virtualbox', 'all'}
     - {role: 'shutter', tags: 'shutter', 'all'}
     - {role: 'openvpn', tags: 'openvpn', 'all'}
+    - {role: 'vim', tags: 'vim', 'all'}
+    - {role: 'lastpass', tags: 'lastpass', 'all'}
