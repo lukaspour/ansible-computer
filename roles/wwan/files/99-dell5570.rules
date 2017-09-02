@@ -1,0 +1,28 @@
+ACTION!="add|change", GOTO="mbim_to_qmi_rules_end"
+SUBSYSTEM!="usb|drivers", GOTO="mbim_to_qmi_rules_end"
+
+# load qmi_wwan module
+SUBSYSTEM=="usb", \
+ATTR{idVendor}=="413c", ATTR{idProduct}=="81a3", \
+RUN+="/sbin/modprobe -b qmi_wwan"
+
+# force Dell WWAN 5809e to configuration #1
+SUBSYSTEM=="usb", \
+ATTR{idVendor}=="413c", ATTR{idProduct}=="81a3", \
+ATTR{bConfigurationValue}="1"
+
+# add the new id in the qmi_wwan driver
+SUBSYSTEM=="drivers", \
+ENV{DEVPATH}=="/bus/usb/drivers/qmi_wwan", \
+ATTR{new_id}="413c 81a3"
+
+# load qcserial module
+SUBSYSTEM=="usb", \
+ATTR{idVendor}=="413c", ATTR{idProduct}=="81a3", \
+RUN+="/sbin/modprobe -b qcserial"
+
+# add the new id in the qcserial driver
+SUBSYSTEM=="drivers", \
+ENV{DEVPATH}=="/bus/usb-serial/drivers/qcserial", \
+ATTR{new_id}="413c 81a3"
+LABEL="mbim_to_qmi_rules_end"

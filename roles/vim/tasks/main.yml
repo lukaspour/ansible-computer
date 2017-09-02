@@ -12,7 +12,7 @@
   file:
     state=directory
     dest=~/.vim_auto_backups
-    mode=0700
+    mode=0755
 
 - name: copy setting to ~/.vim folder
   action: copy src="{{ role_path }}/files/.vim"

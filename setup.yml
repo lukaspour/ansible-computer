@@ -19,3 +19,4 @@
     - {role: 'vim', tags: 'vim', 'all'}
     - {role: 'lastpass', tags: 'lastpass', 'all'}
     - {role: 'terminator', tags: 'terminator', 'all'}
+    - {role: 'wwan', tags: 'wwan', 'all'}
