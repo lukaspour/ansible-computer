@@ -1,0 +1,25 @@
+---
+- name: Remove old terminal
+  apt:
+    pkg="{{item}}"
+    state=absent
+    update_cache=true
+    purge=yes
+  with_items:
+    - mate-terminal
+    - mate-terminal-common
+
+- name: Install needed packages
+  apt:
+    pkg="{{item}}"
+    state=installed
+    cache_valid_time=3600
+    update_cache=true
+  with_items:
+    - terminator
+
+- name: Add custom terminator config
+  copy:
+    src: "{{ role_path }}/files/config"
+    dest: "~/.config/terminator/config"
+    mode: 0644

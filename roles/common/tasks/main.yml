@@ -68,7 +68,6 @@
     - hplip-data
     - preload
     - ubuntu-restricted-extras
-    - terminator
 
 - name: "Mount options for /"
   mount:
@@ -104,19 +103,13 @@
     regexp: '^GRUB_CMDLINE_LINUX_DEFAULT='
     line: 'GRUB_CMDLINE_LINUX_DEFAULT=""'
 
-- name: replace default grub GRUB_GFXMODE
-  lineinfile:
-    path: /etc/default/grub
-    regexp: 'GRUB_GFXMODE='
-    line: 'GRUB_GFXMODE=auto'
-
 - name: Update grub
   command: update-grub
 
 - name: Enable the key combination Ctrl+Alt+Backspace
   lineinfile:
     path: /etc/default/keyboard
-    regexp: '^XKBOPTIONS=""'
+    regexp: '^XKBOPTIONS='
     line: 'XKBOPTIONS="terminate:ctrl_alt_bksp"'
 
 - name: Enable UFW firewall

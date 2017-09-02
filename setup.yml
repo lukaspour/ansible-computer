@@ -18,3 +18,4 @@
     - {role: 'openvpn', tags: 'openvpn', 'all'}
     - {role: 'vim', tags: 'vim', 'all'}
     - {role: 'lastpass', tags: 'lastpass', 'all'}
+    - {role: 'terminator', tags: 'terminator', 'all'}
