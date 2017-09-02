@@ -73,6 +73,7 @@
     - preload
     - ubuntu-restricted-extras
     - whois
+    - curl
 
 - name: "Mount options for /"
   mount:
