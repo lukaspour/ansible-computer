@@ -13,15 +13,15 @@
     - {role: 'insync', tags: 'insync', 'all'}
     - {role: 'laptop', tags: 'laptop', 'all'}
     - {role: 'git', tags: 'git', 'all'}
-    - {role: 'mate', tags: 'mate', 'all'}
+#    - {role: 'mate', tags: 'mate', 'all'}
     - {role: 'spotify', tags: 'spotify', 'all'}
     - {role: 'chrome', tags: 'chrome', 'all'}
     - {role: 'skype', tags: 'skype', 'all'}
     - {role: 'teamviewer', tags: 'teamviewer', 'all'}
     - {role: 'virtualbox', tags: 'virtualbox', 'all'}
     - {role: 'shutter', tags: 'shutter', 'all'}
-    - {role: 'openvpn', tags: 'openvpn', 'all'}
     - {role: 'vim', tags: 'vim', 'all'}
     - {role: 'lastpass', tags: 'lastpass', 'all'}
     - {role: 'terminator', tags: 'terminator', 'all'}
     - {role: 'wwan', tags: 'wwan', 'all'} # FIX WWAN ON DELL E7440
+    - {role: 'openvpn', tags: 'openvpn', 'all'}

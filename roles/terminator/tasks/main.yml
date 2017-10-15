@@ -18,6 +18,9 @@
   with_items:
     - terminator
 
+- name: Create Terminator config directory
+  file: path="~/.config/terminator" state=directory
+
 - name: Add custom terminator config
   copy:
     src: "{{ role_path }}/files/config"
