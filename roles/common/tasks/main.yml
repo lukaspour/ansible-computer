@@ -74,6 +74,8 @@
     - ubuntu-restricted-extras
     - whois
     - curl
+    - yakuake
+    - inkscape
 
 - name: "Mount options for /"
   mount:
@@ -136,3 +138,14 @@
     fstype: tmpfs
     opts: rw,nodev,nosuid,size=1024M
     state: mounted
+
+- name: setup blocked websites
+  blockinfile:
+    path: /etc/hosts
+    block: |
+      127.0.0.1 idnes.cz www.idnes.cz
+      127.0.0.1 ihned.cz www.ihned.cz
+      127.0.0.1 lidovky.cz www.lidovky.cz
+      127.0.0.1 novinky.cz www.novinky.cz
+      127.0.0.1 tn.cz www.tn.cz
+
