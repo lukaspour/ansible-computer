@@ -76,6 +76,11 @@
     - curl
     - yakuake
     - inkscape
+    - python-pip
+
+- name: "Install (AWS) python package."
+  pip:
+    name: awscli
 
 - name: "Mount options for /"
   mount:
