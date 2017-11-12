@@ -19,7 +19,7 @@
 - name: Setup autostart
   copy:
     src: "{{ role_path }}/files/shutter.desktop"
-    dest: "~/.config/autostart-scripts/shutter.desktop"
+    dest: "~/.config/autostart/shutter.desktop"
     owner: "{{username}}"
     group: "{{username}}"
     mode: 0644

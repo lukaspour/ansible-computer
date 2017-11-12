@@ -8,12 +8,12 @@
     insync_folder: "lukaspour@gmail.com"
   roles:
     - {role: 'common', tags: 'common', 'all'}
+    - {role: 'mate', tags: 'mate', 'all'}
     - {role: 'docker', tags: 'docker', 'all'}
     - {role: 'slack', tags: 'slack', 'all'}
     - {role: 'insync', tags: 'insync', 'all'}
     - {role: 'laptop', tags: 'laptop', 'all'}
     - {role: 'git', tags: 'git', 'all'}
-#    - {role: 'mate', tags: 'mate', 'all'}
     - {role: 'spotify', tags: 'spotify', 'all'}
     - {role: 'chrome', tags: 'chrome', 'all'}
     - {role: 'skype', tags: 'skype', 'all'}

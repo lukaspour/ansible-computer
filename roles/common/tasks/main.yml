@@ -78,6 +78,14 @@
     - inkscape
     - python-pip
 
+- name: Setup autostart Guake
+  copy:
+    src: "{{ role_path }}/files/guake.desktop"
+    dest: "~/.config/autostart/guake.desktop"
+    owner: "{{username}}"
+    group: "{{username}}"
+    mode: 0644
+
 - name: "Install (AWS) python package."
   pip:
     name: awscli

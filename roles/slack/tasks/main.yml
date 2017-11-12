@@ -7,7 +7,7 @@
 
 - name: Install slack
   apt:
-    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-2.8.1-amd64.deb
+    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-2.8.2-amd64.deb
     state: present
   when: check.rc == 1
   become: true
@@ -15,7 +15,7 @@
 - name: Setup autostart
   copy:
     src: "{{ role_path }}/files/slack.desktop"
-    dest: "~/.config/autostart-scripts/slack.desktop"
+    dest: "~/.config/autostart/slack.desktop"
     owner: "{{username}}"
     group: "{{username}}"
     mode: 0644
