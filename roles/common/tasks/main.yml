@@ -24,6 +24,13 @@
     - ubuntu-mate-welcome
     - rhythmbox*
     - synapse
+    - mintinstall
+    - mintupload
+    - mintbackup
+    - mintnanny
+    - mintupdate
+    - mintwelcome
+    - xplayer*
 
 - name: Install important utilities
   apt:
