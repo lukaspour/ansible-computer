@@ -1,6 +1,7 @@
 [global_config]
   always_split_with_profile = True
-  enabled_plugins = InactivityWatch, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  enabled_plugins = CustomCommandsMenu, InactivityWatch, ActivityWatch, TerminalShot, APTURLHandler, LaunchpadCodeURLHandler, Logger, LaunchpadBugURLHandler, ClonedSplittingMenu
+  window_state = maximise
 [keybindings]
 [layouts]
   [[default]]
@@ -13,6 +14,8 @@
 [plugins]
 [profiles]
   [[default]]
+    background_image = None
     copy_on_selection = True
-    cursor_color = "#aaaaaa"
     scrollback_infinite = True
+    scrollbar_position = hidden
+    visible_bell = True

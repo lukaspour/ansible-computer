@@ -19,10 +19,41 @@
     - terminator
 
 - name: Create Terminator config directory
-  file: path="~/.config/terminator" state=directory
+  file: 
+    path="~/.config/terminator"
+    state=directory
+    owner="{{username}}"
+    group="{{username}}"
+    mode=0755
+
+- name: Create Terminator plugin directory
+  file: 
+    path="~/.config/terminator/plugins"
+    state=directory
+    owner="{{username}}"
+    group="{{username}}"
+    mode=0755
 
 - name: Add custom terminator config
   copy:
     src: "{{ role_path }}/files/config"
     dest: "~/.config/terminator/config"
+    owner: "{{username}}"
+    group: "{{username}}"
+    mode: 0644
+
+- name: Download google search terminator plugin
+  get_url:
+    url: https://raw.githubusercontent.com/choffee/terminator-plugins/master/searchplugin.py
+    dest: "~/.config/terminator/plugins/searchplugin.py"
+    owner: "{{username}}"
+    group: "{{username}}"
+    mode: 0644
+
+- name: Download clone terminator plugin
+  get_url:
+    url: https://raw.githubusercontent.com/ilgarm/terminator_plugins/master/clone_session.py
+    dest: "~/.config/terminator/plugins/clone_session.py"
+    owner: "{{username}}"
+    group: "{{username}}"
     mode: 0644
