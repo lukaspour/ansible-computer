@@ -46,7 +46,7 @@
     - elinks
     - mc
     - mtr
-    # ncdu: ukazatel obsazeneho mista na disku - moc uzitecne
+    # ncdu: ukazatel obsazeneho mista na disku
     - ncdu
     # nethogs: monitors network activity of each process
     - nethogs
@@ -74,7 +74,7 @@
     - ubuntu-restricted-extras
     - whois
     - curl
-    - yakuake
+    - guake
     - inkscape
     - python-pip
 
