@@ -23,5 +23,6 @@
     - {role: 'vim', tags: 'vim', 'all'}
     - {role: 'lastpass', tags: 'lastpass', 'all'}
     - {role: 'terminator', tags: 'terminator', 'all'}
+    - {role: 'pycharm', tags: 'pycharm', 'all'}
     - {role: 'wwan', tags: 'wwan', 'all'} # FIX WWAN ON DELL E7440
     - {role: 'openvpn', tags: 'openvpn', 'all'}

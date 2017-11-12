@@ -1,0 +1,6 @@
+- name: Download and unarchive pycharm
+  unarchive:
+    src: https://download.jetbrains.com/python/pycharm-professional-2017.2.4.tar.gz
+    dest: /opt/
+    remote_src: yes
+
