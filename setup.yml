@@ -21,6 +21,7 @@
     - {role: 'virtualbox', tags: 'virtualbox', 'all'}
     - {role: 'shutter', tags: 'shutter', 'all'}
     - {role: 'vim', tags: 'vim', 'all'}
+    - {role: 'kdeconnect', tags: 'kdeconnect', 'all'}
     - {role: 'lastpass', tags: 'lastpass', 'all'}
     - {role: 'terminator', tags: 'terminator', 'all'}
     - {role: 'pycharm', tags: 'pycharm', 'all'}

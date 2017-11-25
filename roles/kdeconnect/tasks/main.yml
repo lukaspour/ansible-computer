@@ -1,0 +1,22 @@
+---
+- name: Add source repository
+  apt_repository:
+    repo: 'webupd8team/indicator-kdeconnect'
+    codename: 'xenial'
+
+- name: Install Package
+  apt:
+    pkg="{{item}}"
+    state=latest
+    cache_valid_time=3600
+    update_cache=true
+    force=no
+  become: true
+  with_items:
+    - kdeconnect
+    - indicator-kdeconnect
+
+- name: Allow firewall rule
+  ufw:
+    rule: allow
+    port: '1714:1764'
