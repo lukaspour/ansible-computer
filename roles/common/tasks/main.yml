@@ -84,6 +84,8 @@
     - guake
     - inkscape
     - python-pip
+    # xdotool key XF86Display - set as display shortcut
+    - xdotool
 
 - name: Setup autostart Guake
   copy:
