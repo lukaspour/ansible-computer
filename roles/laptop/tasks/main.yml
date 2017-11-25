@@ -4,6 +4,17 @@
     repo: deb http://ppa.launchpad.net/linrunner/tlp/ubuntu xenial main 
     state: present
 
+- name: Remove conflicting packages
+  apt:
+    pkg="{{item}}"
+    state=absent
+    update_cache=true
+    purge=yes
+    autoremove=yes
+  become: true
+  with_items:
+    - laptop-mode-tools
+
 - name: Install important utilities
   apt:
     pkg="{{item}}"
@@ -16,6 +27,7 @@
     - tlp
     - tlp-rdw
     - powertop
+    - smartmontools
 
 - name: Add TLP config
   copy:
