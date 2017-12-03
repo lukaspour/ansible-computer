@@ -1,0 +1,6 @@
+# Always use suspend_hybrid instead of suspend
+HIBERNATE_MODE=platform
+if [ "$METHOD" = "suspend" ]; then
+METHOD=suspend_hybrid
+fi
+PM_HIBERNATE_DELAY=1800  # time in seconds until hibernate (suspend to disk) occurs; 1800 means 30 minutes

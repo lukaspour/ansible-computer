@@ -37,3 +37,11 @@
     group: root
     mode: 0644
 
+- name: Setup hybrid sleep
+  copy:
+    src: "{{ role_path }}/files/00-use-suspend-hybrid"
+    dest: "/etc/pm/config.d/00-use-suspend-hybrid"
+    owner: root
+    group: root
+    mode: 0644
+
