@@ -20,6 +20,7 @@
     - {role: 'teamviewer', tags: 'teamviewer', 'all'}
     - {role: 'virtualbox', tags: 'virtualbox', 'all'}
     - {role: 'shutter', tags: 'shutter', 'all'}
+    - {role: 'simplescreenrecorder', tags: 'simplescreenrecorder', 'all'}
     - {role: 'vim', tags: 'vim', 'all'}
     - {role: 'kdeconnect', tags: 'kdeconnect', 'all'}
     - {role: 'lastpass', tags: 'lastpass', 'all'}
