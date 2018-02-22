@@ -1,9 +1,8 @@
 todo:
 
-slack download file jako variable nebo instalovat jinak
-
-vzdy prpsat stavajici .ssh slozku
-
+- slack download file jako variable nebo instalovat jinak
+- vzdy prpsat stavajici .ssh slozku
+- udelat rozdilnou instalaci pro PC a Laptop
 
 
 tested on linux mint mate 18.3 sylvia 64bit
