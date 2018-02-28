@@ -12,7 +12,7 @@ copy ssh private key to .ssh folder from secure location
 ```
 sudo apt install git
 chmod 0600 .ssh/id_rsa
-git clone git@github.com:lukaspour/ansible-laptop.git
+git clone git@github.com:lukaspour/ansible-computer.git
 cd ansible-laptop
 
 ./bootstrap.sh all
