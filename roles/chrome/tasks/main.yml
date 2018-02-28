@@ -12,4 +12,10 @@
   when: check.rc ==1 
   become: true
 
-
+- name: Change permissions
+  file:
+    path: /home/lukas/.config/google-chrome
+    owner: "{{username}}"
+    group: "{{username}}"
+    recurse: yes
+    state: directory
