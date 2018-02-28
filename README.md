@@ -1,3 +1,5 @@
+!PUBLIC REPOSITORY!
+
 tested on ubuntu mate 17.10 64bit
 
 copy ssh private key from secure location
