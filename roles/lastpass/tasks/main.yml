@@ -6,5 +6,5 @@
     remote_src: true
 
 - name: install lastpass
-  shell: cd /tmp/lplinux && ./install_lastpass.sh
+  shell: cd /tmp && ./install_lastpass.sh
   become: false

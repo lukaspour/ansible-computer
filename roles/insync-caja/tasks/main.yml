@@ -1,0 +1,46 @@
+---
+- name: Install Insync
+  apt:
+    pkg="{{item}}"
+    state=latest
+    cache_valid_time=3600
+    update_cache=true
+    force=no
+  become: true
+  with_items:
+    - insync-caja
+    - imagemagick
+
+- name: Resize Caja insync compact icons
+  shell: |
+    temp=$(mktemp -d)
+    pushd "$temp"
+    mkdir 16x16
+    cp /usr/share/caja/icons/hicolor/64x64/emblems/emblem-insync* .
+    for emblem in $(ls *.png); do
+      convert "$emblem" -resize 16x16 16x16/"$emblem"
+    done
+    cp 16x16/* /usr/share/icons/hicolor/16x16/emblems/
+    gtk-update-icon-cache /usr/share/icons/hicolor
+    popd
+    rm -r "$temp"
+  args:
+    executable: /bin/bash
+  delegate_to: localhost
+
+- name: Resize Caja insync view icons
+  shell: |
+    temp=$(mktemp -d)
+    pushd "$temp"
+    mkdir 32x32
+    cp /usr/share/caja/icons/hicolor/64x64/emblems/emblem-insync* .
+    for emblem in $(ls *.png); do
+      convert "$emblem" -resize 32x32 32x32/"$emblem"
+    done
+    cp 32x32/* /usr/share/icons/hicolor/32x32/emblems/
+    gtk-update-icon-cache /usr/share/icons/hicolor
+    popd
+    rm -r "$temp"
+  args:
+    executable: /bin/bash
+  delegate_to: localhost

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+host="${1:?Missing host}"
+tag="${2:?Missing tag}"
+
+
 unamestr=$(uname)
 
 # debian, ubuntu, mint etc.
@@ -10,4 +14,5 @@ if [[ $unamestr == "Linux"  && -f $(which apt-get) ]]; then
     sudo apt-get install --yes git ansible python-jmespath
 fi
 
-sudo ansible-playbook setup.yml -i localhost, -c local -vv --tags "$1"
+sudo ansible-playbook -c local setup.yml -vv -i "$host", --tags "$tag"
+

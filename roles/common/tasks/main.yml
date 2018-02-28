@@ -10,7 +10,6 @@
   apt:
     pkg="{{item}}"
     state=absent
-    update_cache=true
     purge=yes
     autoremove=yes
   become: true
@@ -30,7 +29,6 @@
     - mintnanny
     - mintupdate
     - mintwelcome
-    - xplayer*
 
 - name: Install important utilities
   apt:
@@ -134,7 +132,7 @@
     line: 'GRUB_CMDLINE_LINUX_DEFAULT=""'
 
 - name: Update grub
-  command: update-grub
+  command: update-grub2
 
 - name: Enable the key combination Ctrl+Alt+Backspace
   lineinfile:

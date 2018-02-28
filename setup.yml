@@ -6,13 +6,16 @@
     git_user: "Lukas Pour"
     git_email: "lukaspour@gmail.com"
     insync_folder: "lukaspour@gmail.com"
+    docker_compose_version: "1.19.0"
+    pycharm_version: "2017.3.3"
+    slack_version: "3.0.5"
   roles:
     - {role: 'common', tags: 'common', 'all'}
     - {role: 'mate', tags: 'mate', 'all'}
     - {role: 'docker', tags: 'docker', 'all'}
     - {role: 'slack', tags: 'slack', 'all'}
     - {role: 'insync', tags: 'insync', 'all'}
-    - {role: 'laptop', tags: 'laptop', 'all'}
+    - {role: 'insync-caja', tags: 'insync-caja', 'all'} #ONLY FOR MATE
     - {role: 'git', tags: 'git', 'all'}
     - {role: 'spotify', tags: 'spotify', 'all'}
     - {role: 'chrome', tags: 'chrome', 'all'}
@@ -22,9 +25,18 @@
     - {role: 'shutter', tags: 'shutter', 'all'}
     - {role: 'simplescreenrecorder', tags: 'simplescreenrecorder', 'all'}
     - {role: 'vim', tags: 'vim', 'all'}
-    - {role: 'kdeconnect', tags: 'kdeconnect', 'all'}
+#    - {role: 'kdeconnect', tags: 'kdeconnect', 'all'}
     - {role: 'lastpass', tags: 'lastpass', 'all'}
     - {role: 'terminator', tags: 'terminator', 'all'}
     - {role: 'pycharm', tags: 'pycharm', 'all'}
-    - {role: 'wwan', tags: 'wwan', 'all'} # FIX WWAN ON DELL E7440
     - {role: 'openvpn', tags: 'openvpn', 'all'}
+
+- hosts: laptop
+  vars:
+  roles:
+    - {role: 'laptop', tags: 'laptop', 'all'}
+    - {role: 'wwan', tags: 'wwan', 'all'} # FIX WWAN ON DELL E7440
+
+- hosts: computer
+  roles:
+    - {role: 'i7-grub', tags: 'i7-grub', 'all'} # FIX GRAPHICS ON Coffe Lake

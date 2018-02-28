@@ -1,23 +1,19 @@
-todo:
+tested on ubuntu mate 17.10 64bit
 
-- slack download file jako variable nebo instalovat jinak
-- vzdy prpsat stavajici .ssh slozku
-- udelat rozdilnou instalaci pro PC a Laptop
-
-
-tested on linux mint mate 18.3 sylvia 64bit
-
-copy ssh private key to .ssh folder from secure location
+copy ssh private key from secure location
 
 ```
 sudo apt install git
-chmod 0600 .ssh/id_rsa
+chmod 0600 id_rsa
+ssh-add id_rsa
 git clone git@github.com:lukaspour/ansible-computer.git
 cd ansible-laptop
 
-./bootstrap.sh all
+./bootstrap.sh computer all
+./bootstrap.sh laptop all
 
 or
 
-./bootstrap.sh skype
+./bootstrap.sh computer skype
+./bootstrap.sh laptop skype
 ```

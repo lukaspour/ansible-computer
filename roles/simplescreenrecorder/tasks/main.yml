@@ -2,7 +2,7 @@
 - name: Add source repository
   apt_repository:
     repo: 'ppa:maarten-baert/simplescreenrecorder'
-    codename: 'xenial'
+    codename: '{{ansible_distribution_release}}'
 
 - name: Install Package
   apt:

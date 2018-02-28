@@ -2,11 +2,6 @@
 - name: add repository keys
   apt_key:
       keyserver: keyserver.ubuntu.com
-      id: 'BBEBDCB318AD50EC6865090613B00F1FD2C19886'
-
-- name: add repository keys
-  apt_key:
-      keyserver: keyserver.ubuntu.com
       id: '0DF731E45CE24F27EEEB1450EFDC8610341D9410'
 
 - name: Add source repository

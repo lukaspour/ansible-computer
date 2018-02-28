@@ -18,7 +18,7 @@
 
 - name: Add source repository
   apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
+    repo: deb [arch=amd64] https://download.docker.com/linux/{{ansible_distribution|lower}} {{ansible_distribution_release}} stable
     state: present
 
 - name: Install docker
@@ -34,13 +34,13 @@
 
 - name: Ensure docker-compose is installed and available
   get_url: 
-    url : https://github.com/docker/compose/releases/download/1.16.1/docker-compose-{{ ansible_system }}-{{ ansible_userspace_architecture }}
+    url : https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-{{ ansible_system }}-{{ ansible_userspace_architecture }}
     dest: /usr/local/bin/docker-compose
     mode: '0755'
 
 - name: Install docker-compose bash completion
   get_url: 
-    url : https://raw.githubusercontent.com/docker/compose/1.15.0/contrib/completion/bash/docker-compose
+    url : https://raw.githubusercontent.com/docker/compose/{{ docker_compose_version }}/contrib/completion/bash/docker-compose
     dest: /etc/bash_completion.d/docker-compose
     mode: '0644'
 

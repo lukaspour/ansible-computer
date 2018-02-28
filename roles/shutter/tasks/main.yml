@@ -2,7 +2,8 @@
 - name: Add source repository
   apt_repository:
     repo: 'ppa:shutter/ppa'
-    codename: 'xenial'
+#    codename: '{{ansible_distribution_release}}'
+    codename: 'xenial' #NEW NOT AVAILABLE
 
 - name: Install Package
   apt:
