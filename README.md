@@ -19,3 +19,8 @@ or
 ./bootstrap.sh computer skype
 ./bootstrap.sh laptop skype
 ```
+
+
+TODO:
+http://linuxbrew.sh/
+https://github.com/miquella/vaulted
