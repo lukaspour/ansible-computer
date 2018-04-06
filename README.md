@@ -2,6 +2,15 @@
 
 tested on ubuntu mate 17.10 64bit
 
+UBUNTU 18.04 Install to i7 computer
+
+* set `nomodeset` in grub
+* install minimal installation
+* remove cable from secondary graphics
+* go to Software & Updates and allow NVIDIA proprietary driver
+* reboot and connect cable
+
+
 copy ssh private key from secure location
 
 ```
