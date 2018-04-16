@@ -29,6 +29,7 @@
     - mintnanny
     - mintupdate
     - mintwelcome
+    - ubuntu-mate-welcome
 
 - name: Install important utilities
   apt:
@@ -85,6 +86,7 @@
     # xdotool key XF86Display - set as display shortcut
     - xdotool
     - numlockx
+    - vlc
 
 - name: Install Linuxbrew
   git: repo=https://github.com/linuxbrew/brew.git
