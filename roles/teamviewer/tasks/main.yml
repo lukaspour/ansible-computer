@@ -12,4 +12,5 @@
   when: check.rc == 1
   become: true
 
-
+- name: TW disable service
+  command: systemctl disable teamviewerd.service
