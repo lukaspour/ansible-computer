@@ -21,6 +21,6 @@
     force=no
   become: true
   with_items:
-    - virtualbox-5.1
+    - virtualbox-5.2
     - dkms
 

@@ -84,6 +84,15 @@
     - python-pip
     # xdotool key XF86Display - set as display shortcut
     - xdotool
+    - numlockx
+
+- name: Create autostart folder
+  file:
+    path: ~/.config/autostart
+    state: directory
+    owner: "{{username}}"
+    group: "{{username}}"
+    mode: 0755
 
 - name: Setup autostart Guake
   copy:

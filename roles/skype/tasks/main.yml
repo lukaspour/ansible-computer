@@ -1,17 +1,6 @@
 ---
-- name: check if package is already installed
-  command: dpkg-query -W skype*
-  register: check
-  failed_when: false
-  changed_when: false
-
 - name: Install package
-  apt:
-    deb: https://go.skype.com/skypeforlinux-64.deb
-    state: present
-    allow_unauthenticated: yes
-  when: check.rc == 1
-  become: true
+  command: snap install skype --classic
 
 - name: Setup autostart
   copy:

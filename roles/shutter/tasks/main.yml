@@ -1,10 +1,4 @@
 ---
-- name: Add source repository
-  apt_repository:
-    repo: 'ppa:shutter/ppa'
-#    codename: '{{ansible_distribution_release}}'
-    codename: 'xenial' #NEW NOT AVAILABLE
-
 - name: Install Package
   apt:
     pkg="{{item}}"
@@ -15,7 +9,6 @@
   become: true
   with_items:
     - shutter
-    - libgoo-canvas-perl
 
 - name: Setup autostart
   copy:

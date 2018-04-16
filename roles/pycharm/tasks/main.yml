@@ -1,6 +1,2 @@
-- name: Download and unarchive pycharm
-  unarchive:
-    src: https://download.jetbrains.com/python/pycharm-professional-{{pycharm_version}}.tar.gz
-    dest: /opt/
-    remote_src: yes
-
+- name: Install pycharm
+  command: snap install pycharm-professional --classic

@@ -1,16 +1,6 @@
 ---
-- name: check if package is already installed
-  command: dpkg-query -W slack*
-  register: check
-  failed_when: false
-  changed_when: false
-
 - name: Install slack
-  apt:
-    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-{{slack_version}}-amd64.deb
-    state: present
-  when: check.rc == 1
-  become: true
+  command: snap install slack --classic
 
 - name: Setup autostart
   copy:
