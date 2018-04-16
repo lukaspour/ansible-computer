@@ -86,6 +86,22 @@
     - xdotool
     - numlockx
 
+- name: Install Linuxbrew
+  git: repo=https://github.com/linuxbrew/brew.git
+       dest=~/.linuxbrew
+  become: yes
+  become_user: "{{username}}"
+
+- name: Prepare Linuxbrew
+  command: echo 'export PATH='/home/lukas/.linuxbrew/bin:/home/lukas/.linuxbrew/sbin':"$PATH"' >> ~/.profile
+  become: yes
+  become_user: "{{username}}"
+
+- name: Install brew packages
+  command: ~/.linuxbrew/bin/brew install terragrunt terraform pre-commit vaulted
+  become: yes
+  become_user: "{{username}}"
+
 - name: Create autostart folder
   file:
     path: ~/.config/autostart
@@ -129,10 +145,6 @@
     owner: root
     group: root
     mode: 0644
-
-- name: Run trim more often
-  command: mv -v /etc/cron.weekly/fstrim /etc/cron.daily
-  ignore_errors: yes  
 
 - name: replace default grub GRUB_CMDLINE_LINUX_DEFAULT
   lineinfile:

@@ -1,6 +1,6 @@
 !PUBLIC REPOSITORY!
 
-tested on ubuntu mate 17.10 64bit
+tested on ubuntu mate 18.04 64bit
 
 UBUNTU 18.04 Install to i7 computer
 
@@ -28,8 +28,3 @@ or
 ./bootstrap.sh computer skype
 ./bootstrap.sh laptop skype
 ```
-
-
-TODO:
-http://linuxbrew.sh/
-https://github.com/miquella/vaulted

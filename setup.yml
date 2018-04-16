@@ -7,13 +7,13 @@
     git_email: "lukaspour@gmail.com"
     insync_folder: "lukaspour@gmail.com"
     docker_compose_version: "1.21.0"
-    pycharm_version: "2017.3.3"
+
   roles:
     - {role: 'common', tags: 'common', 'all'}
     - {role: 'docker', tags: 'docker', 'all'}
     - {role: 'slack', tags: 'slack', 'all'}
     - {role: 'insync', tags: 'insync', 'all'}
-#    - {role: 'insync-caja', tags: 'insync-caja', 'all'} #ONLY FOR MATE
+    - {role: 'insync-caja', tags: 'insync-caja', 'all'} #ONLY FOR MATE
     - {role: 'git', tags: 'git', 'all'}
     - {role: 'spotify', tags: 'spotify', 'all'}
     - {role: 'chrome', tags: 'chrome', 'all'}
