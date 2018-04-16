@@ -87,6 +87,8 @@
     - xdotool
     - numlockx
     - vlc
+    - libreoffice
+    - libreoffice-l10n-cs
 
 - name: Install Linuxbrew
   git: repo=https://github.com/linuxbrew/brew.git
