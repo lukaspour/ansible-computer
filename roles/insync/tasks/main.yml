@@ -21,6 +21,7 @@
   with_items:
     - insync
     - insync-nautilus
+    - sni-qt
 
 - name: Delete .ssh folder before creating a symlink
   file:

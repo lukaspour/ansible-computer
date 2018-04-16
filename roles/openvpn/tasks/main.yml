@@ -9,6 +9,7 @@
   become: true
   with_items:
     - openvpn
+    - network-manager-openvpn-gnome
 
 - name: Add NetworkManager config
   copy:
