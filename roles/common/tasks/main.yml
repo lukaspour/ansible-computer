@@ -181,7 +181,7 @@
 
 - name: Add NVIDIA drivers source repository
   apt_repository:
-    repo: 'graphics-drivers/ppa'
+    repo: 'ppa:graphics-drivers/ppa'
     codename: 'bionic'
 
 - name: setup blocked websites
