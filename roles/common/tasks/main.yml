@@ -90,32 +90,15 @@
     - libreoffice
     - libreoffice-l10n-cs
 
-- name: Check if Linuxbrew is already installed
-  stat:
-    path: /usr/local/bin/brew
-  register: b
-
 - name: Install Linuxbrew
   script: linuxbrew.sh
-  when: not b.stat.exists
   become: yes
   become_user: "{{username}}"
 
-#- name: Install Linuxbrew
-#  git: repo=https://github.com/linuxbrew/brew.git
-#       dest=~/.linuxbrew
-#  become: yes
-#  become_user: "{{username}}"
-
-#- name: Prepare Linuxbrew
-#  command: echo 'export PATH='/home/lukas/.linuxbrew/bin:/home/lukas/.linuxbrew/sbin':"$PATH"' >> ~/.profile
-#  become: yes
-#  become_user: "{{username}}"
-
-#- name: Install brew packages
-#  command: ~/.linuxbrew/bin/brew install terragrunt terraform pre-commit vaulted
-#  become: yes
-#  become_user: "{{username}}"
+- name: Install brew packages
+  command: ~/.linuxbrew/bin/brew install terragrunt terraform pre-commit vaulted
+  become: yes
+  become_user: "{{username}}"
 
 - name: Create autostart folder
   file:
