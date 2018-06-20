@@ -181,7 +181,7 @@
 
 - name: Add NVIDIA drivers source repository
   apt_repository:
-    repo: 'ppa:maarten-baert/simplescreenrecorder'
+    repo: 'graphics-drivers/ppa'
     codename: 'bionic'
 
 - name: setup blocked websites
