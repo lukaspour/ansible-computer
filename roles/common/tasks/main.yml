@@ -182,7 +182,7 @@
 - name: Add NVIDIA drivers source repository
   apt_repository:
     repo: 'ppa:maarten-baert/simplescreenrecorder'
-    codename: '{{ansible_distribution_release}}'
+    codename: 'bionic'
 
 - name: setup blocked websites
   blockinfile:
