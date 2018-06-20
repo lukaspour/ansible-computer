@@ -1,0 +1,13 @@
+#!/bin/bash
+
+docker run --entrypoint=black \
+  -v $PWD/src:/app \
+  -v $PWD/.black_cache:/root/.cache/black/ \
+  009264348660.dkr.ecr.eu-west-1.amazonaws.com/statusdroid:testing -q /app
+
+for f in `git diff --cached --name-only`; do
+  if [ -f $f ]; then
+    git add $f
+  fi
+done
+

@@ -10,17 +10,6 @@
   with_items:
     - git
 
-#- name: setup git
-#  git_config:
-#    name: alias.ci
-#    scope: global
-#    value: commit
-
-#- git_config:
-#    name: alias.st
-#    scope: global
-#    value: status
-
 - git_config:
     name: user.email
     scope: global
@@ -68,10 +57,10 @@
     group: "{{username}}"
     mode: 0755
 
-- name: Setup git pre-push hook
+- name: Setup git pre-commit hook
   copy:
-    src: "{{ role_path }}/files/pre-push"
-    dest: "~/.git/hooks/pre-push"
+    src: "{{ role_path }}/files/pre-commit"
+    dest: "~/.git/hooks/pre-commit"
     owner: "{{username}}"
     group: "{{username}}"
     mode: 0755
