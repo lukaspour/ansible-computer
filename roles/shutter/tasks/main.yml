@@ -11,13 +11,17 @@
     - shutter
     - libgoocanvas-common
 
-- name: Install local libgoo-canvas-perl_0.06-2ubuntu3_amd64.deb package
+- name: Install local libgoocanvas-common_1.0.0-1_all.deb package
   apt:
-    deb: "{{ role_path }}/files/libgoo-canvas-perl_0.06-2ubuntu3_amd64.deb"
+    deb: "{{ role_path }}/files/libgoocanvas-common_1.0.0-1_all.deb"
 
 - name: Install local libgoocanvas3_1.0.0-1_amd64.deb package
   apt:
     deb: "{{ role_path }}/files/libgoocanvas3_1.0.0-1_amd64.deb"
+
+- name: Install local libgoo-canvas-perl_0.06-2ubuntu3_amd64.deb package
+  apt:
+    deb: "{{ role_path }}/files/libgoo-canvas-perl_0.06-2ubuntu3_amd64.deb"
 
 - name: Setup autostart
   copy:
