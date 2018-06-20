@@ -138,8 +138,8 @@
 
 - name: Add custom sysctl config
   copy:
-    src: "{{ role_path }}/files/sysctl.local.conf"
-    dest: "/etc/sysctl.d/sysctl.local.conf"
+    src: "{{ role_path }}/files/60-sysctl-ansible.conf"
+    dest: "/etc/sysctl.d/60-sysctl-ansible.conf"
     owner: root
     group: root
     mode: 0644
