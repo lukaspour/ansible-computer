@@ -9,6 +9,7 @@
   become: true
   with_items:
     - shutter
+    - libgoocanvas-common
 
 - name: Setup autostart
   copy:
