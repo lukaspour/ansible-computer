@@ -9,7 +9,6 @@
   become: true
   with_items:
     - shutter
-    - libgoocanvas-common
 
 - name: Install local libgoocanvas-common_1.0.0-1_all.deb package
   apt:
