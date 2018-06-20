@@ -10,16 +10,16 @@
   with_items:
     - git
 
-- name: setup git
-  git_config:
-    name: alias.ci
-    scope: global
-    value: commit
+#- name: setup git
+#  git_config:
+#    name: alias.ci
+#    scope: global
+#    value: commit
 
-- git_config:
-    name: alias.st
-    scope: global
-    value: status
+#- git_config:
+#    name: alias.st
+#    scope: global
+#    value: status
 
 - git_config:
     name: user.email

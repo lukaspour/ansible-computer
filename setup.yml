@@ -6,7 +6,7 @@
     git_user: "Lukas Pour"
     git_email: "lukaspour@gmail.com"
     insync_folder: "lukaspour@gmail.com"
-    docker_compose_version: "1.21.0"
+    docker_compose_version: "1.21.2"
 
   roles:
     - {role: 'common', tags: 'common', 'all'}

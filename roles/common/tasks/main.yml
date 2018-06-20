@@ -89,6 +89,7 @@
     - vlc
     - libreoffice
     - libreoffice-l10n-cs
+    - snapd
 
 - name: Install Linuxbrew
   script: linuxbrew.sh
@@ -96,7 +97,7 @@
   become_user: "{{username}}"
 
 - name: Install brew packages
-  command: ~/.linuxbrew/bin/brew install terragrunt terraform pre-commit vaulted
+  command: /home/linuxbrew/.linuxbrew/bin/brew install terragrunt terraform pre-commit vaulted
   become: yes
   become_user: "{{username}}"
 
