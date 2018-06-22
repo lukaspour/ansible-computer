@@ -30,6 +30,8 @@
     - mintupdate
     - mintwelcome
     - ubuntu-mate-welcome
+    - synaptic
+    - xplayer*
 
 - name: Install important utilities
   apt:
@@ -168,7 +170,7 @@
     path: /tmp
     src: tmpfs
     fstype: tmpfs
-    opts: rw,nodev,nosuid,size=1024M
+    opts: rw,nodev,nosuid,size=2048M
     state: mounted
 
 - name: setup /var/tmp as ramdisk
@@ -176,7 +178,7 @@
     path: /var/tmp
     src: /tmp
     fstype: tmpfs
-    opts: rw,nodev,nosuid,size=1024M
+    opts: rw,nodev,nosuid,size=2048M
     state: mounted
 
 - name: Add NVIDIA drivers source repository
