@@ -104,11 +104,6 @@
   become: yes
   become_user: "{{username}}"
 
-- name: Install pre-commit hooks
-  command: pre-commit install
-  become: yes
-  become_user: "{{username}}"
-
 - name: Create autostart folder
   file:
     path: ~/.config/autostart
