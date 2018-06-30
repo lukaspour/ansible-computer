@@ -112,6 +112,14 @@
     group: "{{username}}"
     mode: 0755
 
+- name: Create projects folder
+  file:
+    path: ~/projects
+    state: directory
+    owner: "{{username}}"
+    group: "{{username}}"
+    mode: 0755
+
 - name: Setup autostart Guake
   copy:
     src: "{{ role_path }}/files/guake.desktop"
