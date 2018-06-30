@@ -92,6 +92,7 @@
     - libreoffice
     - libreoffice-l10n-cs
     - snapd
+    - rdesktop
 
 - name: Install Linuxbrew
   script: linuxbrew.sh
@@ -100,6 +101,11 @@
 
 - name: Install brew packages
   command: /home/linuxbrew/.linuxbrew/bin/brew install terragrunt terraform pre-commit vaulted
+  become: yes
+  become_user: "{{username}}"
+
+- name: Install pre-commit hooks
+  command: pre-commit install
   become: yes
   become_user: "{{username}}"
 

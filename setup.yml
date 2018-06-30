@@ -25,6 +25,7 @@
     - {role: 'vim', tags: 'vim', 'all'}
     - {role: 'lastpass', tags: 'lastpass', 'all'}
     - {role: 'terminator', tags: 'terminator', 'all'}
+    - {role: 'telia', tags: 'telia', 'all'}
     - {role: 'pycharm', tags: 'pycharm', 'all'}
     - {role: 'openvpn', tags: 'openvpn', 'all'}
 

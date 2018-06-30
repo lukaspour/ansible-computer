@@ -1,0 +1,16 @@
+---
+- name: Install Package
+  apt:
+    pkg="{{item}}"
+    state=latest 
+    cache_valid_time=3600 
+    update_cache=true
+    force=no
+  become: true
+  with_items:
+    - libwebkitgtk-1.0-0
+
+- name: Install local ps-pulse-linux-5.3r3.0-b1021-ubuntu-debian-64-bit-installer.deb package
+  apt:
+    deb: "{{ role_path }}/files/ps-pulse-linux-5.3r3.0-b1021-ubuntu-debian-64-bit-installer.deb"
+
