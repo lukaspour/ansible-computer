@@ -53,5 +53,10 @@
   lineinfile:
     path: /etc/default/docker
     regexp: '^DOCKER_OPTS='
-    line: 'DOCKER_OPTS="--dns 8.8.8.8 --dns 8.8.4.4 --bip=172.31.31.0/24"'
+    line: 'DOCKER_OPTS="--bip=172.31.31.0/24"'
+
+- name: Change default docker network - secondary location
+  copy:
+    src: "{{ role_path }}/files/daemon.json"
+    dest: "/etc/docker/daemon.json"
 
