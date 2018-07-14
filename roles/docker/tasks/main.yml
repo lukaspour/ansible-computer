@@ -53,7 +53,7 @@
   lineinfile:
     path: /etc/default/docker
     regexp: '^DOCKER_OPTS='
-    line: 'DOCKER_OPTS="--bip=172.31.31.0/24"'
+    line: 'DOCKER_OPTS="--bip=172.31.31.1/24"'
 
 - name: Change default docker network - secondary location
   copy:
