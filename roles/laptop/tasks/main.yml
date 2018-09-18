@@ -1,8 +1,8 @@
 ---
-- name: Add source repository
+- name: Add TLP source repository
   apt_repository:
-    repo: deb http://ppa.launchpad.net/linrunner/tlp/{{ansible_distribution|lower}} {{ansible_distribution_release}} main 
-    state: present
+    repo: 'ppa:linrunner/tlp'
+    codename: 'bionic'
 
 - name: Remove conflicting packages
   apt:
@@ -37,11 +37,11 @@
     group: root
     mode: 0644
 
-- name: Setup hybrid sleep
-  copy:
-    src: "{{ role_path }}/files/00-use-suspend-hybrid"
-    dest: "/etc/pm/config.d/00-use-suspend-hybrid"
-    owner: root
-    group: root
-    mode: 0644
+#- name: Setup hybrid sleep
+#  copy:
+#    src: "{{ role_path }}/files/00-use-suspend-hybrid"
+#    dest: "/etc/pm/config.d/00-use-suspend-hybrid"
+#    owner: root
+#    group: root
+#    mode: 0644
 
