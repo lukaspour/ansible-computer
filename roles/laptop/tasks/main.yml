@@ -28,6 +28,7 @@
     - tlp-rdw
     - powertop
     - smartmontools
+    - linux-tools-generic
 
 - name: Add TLP config
   copy:
@@ -36,6 +37,9 @@
     owner: root
     group: root
     mode: 0644
+
+- name: Remove default CPU governor
+  command: update-rc.d -f ondemand remove && update-rc.d -f cpufrequtils remove
 
 #- name: Setup hybrid sleep
 #  copy:

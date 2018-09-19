@@ -92,7 +92,7 @@ NMI_WATCHDOG=0
 #   performance, normal, powersave
 # Requires kernel module msr and x86_energy_perf_policy from linux-tools
 ENERGY_PERF_POLICY_ON_AC=performance
-ENERGY_PERF_POLICY_ON_BAT=powersave
+ENERGY_PERF_POLICY_ON_BAT=balance-power
 
 # Hard disk devices; separate multiple devices with spaces (default: sda).
 # Devices can be specified by disk ID also (lookup with: tlp diskid).
@@ -122,8 +122,8 @@ DISK_APM_LEVEL_ON_BAT="128 128"
 
 # SATA aggressive link power management (ALPM):
 #   min_power, medium_power, max_performance
-SATA_LINKPWR_ON_AC=max_performance
-SATA_LINKPWR_ON_BAT=medium_power
+SATA_LINKPWR_ON_AC="max_performance"
+SATA_LINKPWR_ON_BAT="med_power_with_dipm medium_power"
 
 # Exclude SATA host devices from link power management.
 # Separate multiple hosts with spaces.
@@ -230,7 +230,7 @@ USB_BLACKLIST_WWAN=1
 # on system startup: 0=disable, 1=enable.
 # Hint: the parameters DEVICES_TO_DISABLE/ENABLE_ON_STARTUP/SHUTDOWN below
 #   are ignored when this is enabled!
-RESTORE_DEVICE_STATE_ON_STARTUP=0
+RESTORE_DEVICE_STATE_ON_STARTUP=1
 
 # Radio devices to disable on startup: bluetooth, wifi, wwan.
 # Separate multiple devices with spaces.
@@ -281,18 +281,18 @@ RESTORE_DEVICE_STATE_ON_STARTUP=0
 
 # Radio devices to disable on connect.
 DEVICES_TO_DISABLE_ON_LAN_CONNECT="wifi wwan"
-DEVICES_TO_DISABLE_ON_WIFI_CONNECT="wwan"
-DEVICES_TO_DISABLE_ON_WWAN_CONNECT="wifi"
+DEVICES_TO_DISABLE_ON_WIFI_CONNECT="wwan lan"
+DEVICES_TO_DISABLE_ON_WWAN_CONNECT="wifi lan"
 
 # Radio devices to enable on disconnect.
 DEVICES_TO_ENABLE_ON_LAN_DISCONNECT="wifi wwan"
-DEVICES_TO_ENABLE_ON_WIFI_DISCONNECT="wwan"
-DEVICES_TO_ENABLE_ON_WWAN_DISCONNECT="wifi"
+DEVICES_TO_ENABLE_ON_WIFI_DISCONNECT="wwan lan"
+DEVICES_TO_ENABLE_ON_WWAN_DISCONNECT="wifi lan"
 
 # Radio devices to enable/disable when docked.
-#DEVICES_TO_ENABLE_ON_DOCK=""
+DEVICES_TO_ENABLE_ON_DOCK="lan"
 DEVICES_TO_DISABLE_ON_DOCK="wifi wwan"
 
 # Radio devices to enable/disable when undocked.
 DEVICES_TO_ENABLE_ON_UNDOCK="wifi wwan"
-#DEVICES_TO_DISABLE_ON_UNDOCK=""
+DEVICES_TO_DISABLE_ON_UNDOCK="lan"
