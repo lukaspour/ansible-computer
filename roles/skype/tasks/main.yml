@@ -2,11 +2,11 @@
 - name: Install package
   command: snap install skype --classic
 
-- name: Setup autostart
-  copy:
-    src: "{{ role_path }}/files/skypeforlinux.desktop"
-    dest: "~/.config/autostart/skypeforlinux.desktop"
-    owner: "{{username}}"
-    group: "{{username}}"
-    mode: 0644
+#- name: Setup autostart
+#  copy:
+#    src: "{{ role_path }}/files/skypeforlinux.desktop"
+#    dest: "~/.config/autostart/skypeforlinux.desktop"
+#    owner: "{{username}}"
+#    group: "{{username}}"
+#    mode: 0644
 

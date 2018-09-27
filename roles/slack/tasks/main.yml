@@ -2,11 +2,11 @@
 - name: Install slack
   command: snap install slack --classic
 
-- name: Setup autostart
-  copy:
-    src: "{{ role_path }}/files/slack.desktop"
-    dest: "~/.config/autostart/slack.desktop"
-    owner: "{{username}}"
-    group: "{{username}}"
-    mode: 0644
+#- name: Setup autostart
+#  copy:
+#    src: "{{ role_path }}/files/slack.desktop"
+#    dest: "~/.config/autostart/slack.desktop"
+#    owner: "{{username}}"
+#    group: "{{username}}"
+#    mode: 0644
 
