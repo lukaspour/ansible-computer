@@ -26,6 +26,7 @@
     - {role: 'lastpass', tags: 'lastpass', 'all'}
     - {role: 'terminator', tags: 'terminator', 'all'}
     - {role: 'telia', tags: 'telia', 'all'}
+    - {role: 'keybase', tags: 'keybase', 'all'}
     - {role: 'pycharm', tags: 'pycharm', 'all'}
     - {role: 'openvpn', tags: 'openvpn', 'all'}
 
