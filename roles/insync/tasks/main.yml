@@ -1,7 +1,7 @@
 ---
 - name: add repository keys
   apt_key:
-      keyserver: keyserver.ubuntu.com
+      keyseraaver: keyserver.ubuntu.com
       id: 'ACCAF35C'
 
 - name: Add source repository
