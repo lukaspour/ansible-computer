@@ -1,7 +1,7 @@
 ---
 - name: Download install file
   unarchive:
-    src: https://lastpass.com/lplinux.tar.bz2
+    src: https://download.cloud.lastpass.com/linux/lplinux.tar.bz2
     dest: /tmp
     remote_src: true
 
