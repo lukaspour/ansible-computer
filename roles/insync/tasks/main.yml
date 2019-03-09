@@ -23,7 +23,7 @@
 - name: Delete .ssh folder before creating a symlink
   file:
     state: absent
-    path: "~/.ssh/"
+    path: "~/.ssh"
   ignore_errors: yes
 
 - name: Create Folder Symlinks

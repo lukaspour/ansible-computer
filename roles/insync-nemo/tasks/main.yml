@@ -6,7 +6,5 @@
     cache_valid_time=3600
     update_cache=true
     force=no
-  become: true
-  become_user: "{{username}}"
   with_items:
     - insync-nemo

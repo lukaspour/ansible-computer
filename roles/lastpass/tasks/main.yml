@@ -7,4 +7,5 @@
 
 - name: install lastpass
   shell: cd /tmp && ./install_lastpass.sh
-  become: false
+  become: true
+  become_user: "{{username}}"
