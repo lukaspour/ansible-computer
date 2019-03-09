@@ -140,12 +140,17 @@
   become_user: "{{username}}"
 
 - name: Recover Cinnamon settings
-  command: dconf load /apps/cinnamon/ < {{ role_path }}/files/cinnamon_settings.xml
+  command: dconf load /org/cinnamon/ < {{ role_path }}/files/cinnamon_settings.xml
   become: true
   become_user: "{{username}}"
 
 - name: Recover Nemo settings
-  command: dconf load /apps/nemo/ < {{ role_path }}/files/nemo_settings.xml
+  command: dconf load /org/nemo/ < {{ role_path }}/files/nemo_settings.xml
+  become: true
+  become_user: "{{username}}"
+
+- name: Recover Gnome settings
+  command: dconf load /org/gnome/ < {{ role_path }}/files/gnome_settings.xml
   become: true
   become_user: "{{username}}"
 

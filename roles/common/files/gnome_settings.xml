@@ -1,0 +1,23 @@
+[terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+use-theme-transparency=false
+
+[terminal/legacy]
+schema-version=uint32 3
+
+[desktop/a11y/applications]
+screen-keyboard-enabled=false
+screen-reader-enabled=false
+
+[desktop/a11y/mouse]
+secondary-click-enabled=false
+secondary-click-time=1.2
+dwell-time=1.2
+dwell-threshold=10
+dwell-click-enabled=false
+
+[desktop/interface]
+toolkit-accessibility=false
+
+[libgnomekbd/keyboard]
+layouts=['us', 'cz', 'cz\tqwerty']
+options=['grp\tgrp:lalt_lshift_toggle']
