@@ -13,20 +13,20 @@
     state=directory
     dest=~/.vim_auto_backups
     mode=0755
-    owner: "{{username}}"
-    group: "{{username}}"
+    owner="{{username}}"
+    group="{{username}}"
 
 - name: copy setting to ~/.vim folder
   action: copy src="{{ role_path }}/files/.vim"
     dest=~/
     mode=644
-    owner: "{{username}}"
-    group: "{{username}}"
+    owner="{{username}}"
+    group="{{username}}"
 
 - name: copy setting to ~/.vimrc file
   action: copy src=.vimrc
     dest=~/.vimrc
     mode=644
-    owner: "{{username}}"
-    group: "{{username}}"
+    owner="{{username}}"
+    group="{{username}}"
 

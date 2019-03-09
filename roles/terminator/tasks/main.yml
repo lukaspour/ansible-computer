@@ -8,6 +8,7 @@
   with_items:
     - mate-terminal
     - mate-terminal-common
+    - gnome-terminal
 
 - name: Install needed packages
   apt:

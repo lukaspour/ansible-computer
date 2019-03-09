@@ -32,6 +32,9 @@
     dest: "~/{{item}}"
     force: yes
     state: link
+    owner: "{{username}}"
+    group: "{{username}}"
+    mode: 0755
   with_items:
     - Desktop
     - Pictures

@@ -139,6 +139,16 @@
   become: true
   become_user: "{{username}}"
 
+- name: Recover Cinnamon settings
+  command: dconf load /apps/cinnamon/ < {{ role_path }}/files/cinnamon_settings.xml
+  become: true
+  become_user: "{{username}}"
+
+- name: Recover Nemo settings
+  command: dconf load /apps/nemo/ < {{ role_path }}/files/nemo_settings.xml
+  become: true
+  become_user: "{{username}}"
+
 - name: "Install PIP packages."
   pip:
     umask: "0022"
