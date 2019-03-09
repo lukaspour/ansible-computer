@@ -2,7 +2,7 @@
 - name: Add TLP source repository
   apt_repository:
     repo: 'ppa:linrunner/tlp'
-    codename: 'bionic'
+    codename: "{{ ubuntu_version }}"
 
 - name: Remove conflicting packages
   apt:

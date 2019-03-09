@@ -32,6 +32,8 @@
     - ubuntu-mate-welcome
     - synaptic
     - xplayer*
+    - pix
+    - timeshift
 
 - name: Install important utilities
   apt:
@@ -42,32 +44,30 @@
     force=no
   become: true
   with_items:
-    - ruby
+#    - ruby
     - python-jmespath
     - bash-completion
     - build-essential
+    - linuxbrew-wrapper
+    - curl
+    - file
     - git
     - htop
     - iftop
     - iotop
     - iptraf
-    - elinks
     - mc
     - mtr
     # ncdu: ukazatel obsazeneho mista na disku
     - ncdu
     # nethogs: monitors network activity of each process
     - nethogs
-    # nload: network monitor which simply shows TX and RX
-    - nload
     - nmap
     # ntp: network time protocol
     - ntp
     # openssl: using as secured telnet: openssl s_client ....
     - openssl
     - screen
-    # systat: iostat: io monitoring
-    - sysstat
     - tcpdump
     - telnet
     - tmux
@@ -93,14 +93,20 @@
     - libreoffice-l10n-cs
     - snapd
     - rdesktop
+    - python-setuptools
 
-- name: Install Linuxbrew
-  script: linuxbrew.sh
-  become: yes
-  become_user: "{{username}}"
+#- name: Install Linuxbrew
+#  script: linuxbrew.sh
+#  become: yes
+#  become_user: "{{username}}"
+
+#- name: Install brew packages
+#  command: /home/linuxbrew/.linuxbrew/bin/brew install terragrunt terraform pre-commit vaulted
+#  become: yes
+#  become_user: "{{username}}"
 
 - name: Install brew packages
-  command: /home/linuxbrew/.linuxbrew/bin/brew install terragrunt terraform pre-commit vaulted
+  command: brew install terragrunt terraform pre-commit vaulted
   become: yes
   become_user: "{{username}}"
 
@@ -128,9 +134,18 @@
     group: "{{username}}"
     mode: 0644
 
-- name: "Install (AWS) python package."
+- name: Recover Guake settings
+  command: dconf load /apps/guake/ < {{ role_path }}/files/guake_settings.xml
+  become: true
+  become_user: "{{username}}"
+
+- name: "Install PIP packages."
   pip:
-    name: awscli
+    umask: "0022"
+    name: 
+      - awscli
+      - saws
+      - mycli
 
 - name: "Mount options for /"
   mount:

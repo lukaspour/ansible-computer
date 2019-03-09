@@ -9,7 +9,7 @@
 
 - name: Add source repository
   apt_repository:
-    repo: deb http://download.virtualbox.org/virtualbox/debian bionic contrib
+    repo: deb http://download.virtualbox.org/virtualbox/debian {{ ubuntu_version }} contrib
     state: present
 
 - name: Install Package

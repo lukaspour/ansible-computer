@@ -6,8 +6,8 @@
     git_user: "Lukas Pour"
     git_email: "lukaspour@gmail.com"
     insync_folder: "lukaspour@gmail.com"
-    docker_compose_version: "1.21.2"
-
+    docker_compose_version: "1.23.2"
+    ubuntu_version: "bionic"
   roles:
     - {role: 'common', tags: 'common', 'all'}
     - {role: 'docker', tags: 'docker', 'all'}
@@ -22,6 +22,7 @@
     - {role: 'virtualbox', tags: 'virtualbox', 'all'}
     - {role: 'shutter', tags: 'shutter', 'all'}
     - {role: 'simplescreenrecorder', tags: 'simplescreenrecorder', 'all'}
+    - {role: 'wireshark', tags: 'wireshark', 'all'}
     - {role: 'vim', tags: 'vim', 'all'}
     - {role: 'lastpass', tags: 'lastpass', 'all'}
     - {role: 'terminator', tags: 'terminator', 'all'}
