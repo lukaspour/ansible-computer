@@ -42,7 +42,7 @@
     force=no
   become: true
   with_items:
-    - aptitude
+    - ruby
     - python-jmespath
     - bash-completion
     - build-essential
@@ -189,11 +189,6 @@
     fstype: tmpfs
     opts: rw,nodev,nosuid,size=2048M
     state: mounted
-
-- name: Add NVIDIA drivers source repository
-  apt_repository:
-    repo: 'ppa:graphics-drivers/ppa'
-    codename: 'bionic'
 
 - name: setup blocked websites
   blockinfile:
