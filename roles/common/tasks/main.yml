@@ -139,6 +139,9 @@
 #  become: true
 #  become_user: "{{username}}"
 
+#
+# dconf dump / > cinnamon_dump.xml
+#
 - name: Recover DCONF settings
   command: "bash {{ role_path }}/files/dconf.sh"
   become: true
