@@ -134,23 +134,8 @@
     group: "{{username}}"
     mode: 0644
 
-- name: Recover Guake settings
-  command: dconf load /apps/guake/ < {{ role_path }}/files/guake_settings.xml
-  become: true
-  become_user: "{{username}}"
-
-- name: Recover Cinnamon settings
-  command: dconf load /org/cinnamon/ < {{ role_path }}/files/cinnamon_settings.xml
-  become: true
-  become_user: "{{username}}"
-
-- name: Recover Nemo settings
-  command: dconf load /org/nemo/ < {{ role_path }}/files/nemo_settings.xml
-  become: true
-  become_user: "{{username}}"
-
-- name: Recover Gnome settings
-  command: dconf load /org/gnome/ < {{ role_path }}/files/gnome_settings.xml
+- name: Recover DCONF settings
+  command: "dconf reset -f / && dconf load / < {{ role_path }}/files/cinnamon_dump.xml"
   become: true
   become_user: "{{username}}"
 
