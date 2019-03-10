@@ -134,8 +134,13 @@
     group: "{{username}}"
     mode: 0644
 
+#- name: Recover DCONF settings
+#  command: "dconf reset -f / && dconf load / < {{ role_path }}/files/cinnamon_dump.xml"
+#  become: true
+#  become_user: "{{username}}"
+
 - name: Recover DCONF settings
-  command: "dconf reset -f / && dconf load / < {{ role_path }}/files/cinnamon_dump.xml"
+  command: "bash {{ role_path }}/files/dconf.sh"
   become: true
   become_user: "{{username}}"
 
