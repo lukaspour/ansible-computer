@@ -1,9 +1,28 @@
+[com/linuxmint/updates]
+level2-is-safe=true
+level3-is-visible=true
+level3-is-safe=true
+level1-is-safe=true
+kernel-updates-are-safe=true
+window-width=790
+level4-is-safe=true
+security-updates-are-safe=true
+security-updates-are-visible=true
+window-height=570
+show-welcome-page=false
+kernel-updates-are-visible=true
+level2-is-visible=true
+level4-is-visible=true
+show-level-column=false
+window-pane-position=305
+level1-is-visible=true
+
 [org/cinnamon]
 desktop-effects-unmaximize-transition='easeOutBounce'
 extension-cache-updated=1552135288
 desktop-effects-on-dialogs=false
 desktop-effects-maximize-transition='easeInBack'
-applet-cache-updated=1552136561
+applet-cache-updated=1552251323
 desktop-effects-map-effect='flyUp'
 alttab-switcher-enforce-primary-monitor=true
 alttab-switcher-show-all-workspaces=false
@@ -18,14 +37,14 @@ desktop-effects-minimize-effect='flyDown'
 alttab-switcher-style='coverflow'
 workspace-osd-duration=400
 desktop-effects=false
-panel-zone-icon-sizes='[{"panelId":1,"left":0,"center":0,"right":0},{"panelId":2,"left":0,"center":0,"right":0}]'
+panel-zone-icon-sizes='[{"panelId":1,"left":0,"center":0,"right":0}]'
 panels-height=['1:24', '2:40']
 enable-vfade=false
 next-applet-id=17
 desktop-effects-map-transition='easeOutSine'
 desktop-effects-tile-transition='easeInBack'
 desktop-effects-unmaximize-effect='scale'
-panels-enabled=['1:0:bottom', '2:0:top']
+panels-enabled=['1:0:bottom']
 desktop-effects-maximize-time=100
 desktop-effects-maximize-effect='scale'
 desktop-effects-on-menus=false
@@ -45,22 +64,38 @@ workspace-osd-x=50
 workspace-osd-y=50
 desktop-effects-tile-time=100
 panels-autohide=['1:false', '2:false']
+device-aliases=['/org/freedesktop/UPower/devices/battery_BAT0:=SMP 01AV430']
 startup-animation=false
 
 [org/cinnamon/settings-daemon/plugins/power]
-sleep-display-battery=900
-sleep-display-ac=1800
-critical-battery-action='nothing'
-sleep-inactive-ac-timeout=0
+critical-battery-action='suspend'
+idle-dim-time=60
+lid-close-suspend-with-external-monitor=true
 sleep-inactive-battery-timeout=1800
+lid-close-ac-action='nothing'
+lid-close-battery-action='suspend'
+sleep-inactive-ac-timeout=0
+sleep-display-ac=1800
+sleep-display-battery=600
 
 [org/cinnamon/settings-daemon/plugins/xsettings]
-buttons-have-icons=false
+buttons-have-icons=true
+menus-have-icons=true
+
+[org/cinnamon/settings-daemon/peripherals/touchpad]
+motion-threshold=1
+custom-acceleration=true
+motion-acceleration=9.1462450592885371
 
 [org/cinnamon/settings-daemon/peripherals/keyboard]
 repeat-interval=uint32 30
 delay=uint32 500
 numlock-state='on'
+
+[org/cinnamon/settings-daemon/peripherals/mouse]
+drag-threshold=8
+motion-threshold=1
+double-click=400
 
 [org/cinnamon/muffin]
 placement-mode='automatic'
@@ -70,25 +105,33 @@ workspace-cycle=true
 
 [org/cinnamon/desktop/interface]
 text-scaling-factor=0.90000000000000002
+cursor-size=24
 first-day-of-week=1
 cursor-theme='DMZ-White'
+scaling-factor=uint32 1
 toolkit-accessibility=false
-keyboard-layout-use-upper=false
+keyboard-layout-use-upper=true
 clock-show-seconds=true
 cursor-blink-time=1200
 icon-theme='Mint-Y'
+gtk-overlay-scrollbars=true
+cursor-blink=true
 gtk-theme='Mint-Y-Dark'
 clock-show-date=false
-keyboard-layout-prefer-variant-names=false
+keyboard-layout-prefer-variant-names=true
 
 [org/cinnamon/desktop/notifications]
 bottom-notifications=true
 remove-old=false
 
 [org/cinnamon/desktop/media-handling]
+autorun-x-content-start-app=['x-content/unix-software', 'x-content/audio-cdda', 'x-content/video-dvd']
 autorun-never=false
+autorun-x-content-ignore=@as []
+autorun-x-content-open-folder=@as []
 
 [org/cinnamon/desktop/screensaver]
+use-custom-format=false
 layout-group=0
 lock-delay=uint32 15
 
@@ -106,12 +149,17 @@ recent-files-max-age=-1
 
 [org/cinnamon/desktop/wm/preferences]
 min-window-opacity=30
+button-layout=':shade,minimize,maximize,close'
 theme='Mint-Y-Dark'
 action-scroll-titlebar='none'
 num-workspaces=5
 
+[org/cinnamon/desktop/a11y/applications]
+screen-keyboard-enabled=false
+screen-reader-enabled=false
+
 [org/cinnamon/desktop/a11y/keyboard]
-togglekeys-enable-osd=false
+togglekeys-enable-osd=true
 mousekeys-init-delay=300
 mousekeys-max-speed=10
 mousekeys-accel-time=300
@@ -119,25 +167,28 @@ bouncekeys-delay=300
 slowkeys-delay=300
 
 [org/cinnamon/desktop/a11y/mouse]
+secondary-click-enabled=false
 secondary-click-time=1.2
 dwell-time=1.2
 dwell-threshold=10
+dwell-click-enabled=false
 
 [org/cinnamon/desktop/sound]
 volume-sound-enabled=false
+maximum-volume=120
 event-sounds=false
 
 [org/cinnamon/desktop/background]
-picture-uri='file:///usr/share/backgrounds/linuxmint-tara/jowens_kauai.jpg'
-picture-options='stretched'
+picture-uri='file:///usr/share/backgrounds/linuxmint-tessa/skunze_beach.jpg'
+picture-options='zoom'
 
 [org/cinnamon/desktop/background/slideshow]
-image-source='xml:///usr/share/cinnamon-background-properties/linuxmint-tessa.xml'
+image-source='directory:///home/lukas/Pictures'
 delay=15
 
 [org/cinnamon/theme]
 symbolic-relative-size=0.67000000000000004
-theme-cache-updated=1552135022
+theme-cache-updated=1552251149
 name='Mint-Y-Dark'
 
 [org/cinnamon/sounds]
@@ -151,6 +202,21 @@ switch-enabled=false
 [org/cinnamon/cinnamon-session]
 quit-delay-toggle=true
 quit-time-delay=60
+
+[org/gnome/calculator]
+target-currency=''
+show-zeroes=false
+source-currency=''
+show-thousands=false
+button-mode='basic'
+target-units='radian'
+word-size=64
+window-position=(1408, 228)
+number-format='automatic'
+angle-units='degrees'
+base=10
+source-units='degree'
+accuracy=9
 
 [org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 use-theme-transparency=false
@@ -170,10 +236,11 @@ dwell-threshold=10
 dwell-click-enabled=false
 
 [org/gnome/desktop/interface]
+scaling-factor=uint32 1
 toolkit-accessibility=false
 
 [org/gnome/libgnomekbd/keyboard]
-layouts=['us', 'cz', 'cz\tqwerty']
+layouts=['us', 'cz\tqwerty']
 options=['grp\tgrp:lalt_lshift_toggle']
 
 [org/nemo/preferences]
@@ -190,7 +257,7 @@ disabled-actions=['send-by-mail.nemo_action']
 
 [org/nemo/window-state]
 start-with-sidebar=true
-geometry='800x550+399+75'
+geometry='800x550+48+48'
 maximized=false
 sidebar-bookmark-breakpoint=5
 
@@ -231,21 +298,8 @@ allow-bold=true
 palette='#000000000000:#cccc00000000:#4e4e9a9a0606:#c4c4a0a00000:#34346565a4a4:#757550507b7b:#060698209a9a:#d3d3d7d7cfcf:#555557575353:#efef29292929:#8a8ae2e23434:#fcfce9e94f4f:#72729f9fcfcf:#adad7f7fa8a8:#3434e2e2e2e2:#eeeeeeeeecec:#ffffffffffff:#000000000000'
 palette-name='Tango'
 
-[com/linuxmint/updates]
-level2-is-safe=true
-level3-is-visible=true
-level3-is-safe=true
-level1-is-safe=true
-kernel-updates-are-safe=true
-window-width=790
-level4-is-safe=true
-security-updates-are-safe=true
-security-updates-are-visible=true
-window-height=570
-show-welcome-page=false
-kernel-updates-are-visible=true
-level2-is-visible=true
-level4-is-visible=true
-show-level-column=false
-window-pane-position=305
-level1-is-visible=true
+[ca/desrt/dconf-editor]
+saved-view='/org/cinnamon/settings-daemon/plugins/power/critical-battery-action'
+window-height=598
+window-width=800
+window-is-maximized=false

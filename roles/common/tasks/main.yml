@@ -44,7 +44,6 @@
     force=no
   become: true
   with_items:
-#    - ruby
     - python-jmespath
     - bash-completion
     - build-essential
@@ -94,16 +93,7 @@
     - snapd
     - rdesktop
     - python-setuptools
-
-#- name: Install Linuxbrew
-#  script: linuxbrew.sh
-#  become: yes
-#  become_user: "{{username}}"
-
-#- name: Install brew packages
-#  command: /home/linuxbrew/.linuxbrew/bin/brew install terragrunt terraform pre-commit vaulted
-#  become: yes
-#  become_user: "{{username}}"
+    - dconf-editor
 
 - name: Install brew packages
   command: brew install terragrunt terraform pre-commit vaulted
@@ -134,16 +124,11 @@
     group: "{{username}}"
     mode: 0644
 
-#- name: Recover DCONF settings
-#  command: "dconf reset -f / && dconf load / < {{ role_path }}/files/cinnamon_dump.xml"
-#  become: true
-#  become_user: "{{username}}"
-
 #
 # dconf dump / > cinnamon_dump.xml
 #
 - name: Recover DCONF settings
-  command: "bash {{ role_path }}/files/dconf.sh"
+  command: "dconf reset -f / && dconf load / < {{ role_path }}/files/cinnamon_dump.xml"
   become: true
   become_user: "{{username}}"
 
