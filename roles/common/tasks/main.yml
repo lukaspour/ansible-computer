@@ -210,3 +210,9 @@
       127.0.0.1 super.cz www.super.cz
       127.0.0.1 seznam.cz seznam.cz
 
+- name: setup clutter
+  blockinfile:
+    path: /etc/environment
+    block: |
+      CLUTTER_VBLANK=True
+

@@ -16,6 +16,7 @@
     - libcairo2-dev
     - python3-venv
     - python3-wheel
+    - intel-microcode
 
 - name: git clone fix
   git:
