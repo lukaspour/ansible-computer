@@ -14,6 +14,7 @@
   become: true
   with_items:
     - laptop-mode-tools
+    - thermald
 
 - name: Install important utilities
   apt:
@@ -42,12 +43,4 @@
 
 - name: Remove default CPU governor
   command: update-rc.d -f ondemand remove && update-rc.d -f cpufrequtils remove
-
-#- name: Setup hybrid sleep
-#  copy:
-#    src: "{{ role_path }}/files/00-use-suspend-hybrid"
-#    dest: "/etc/pm/config.d/00-use-suspend-hybrid"
-#    owner: root
-#    group: root
-#    mode: 0644
 

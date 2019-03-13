@@ -71,7 +71,7 @@ CPU_SCALING_GOVERNOR_ON_BAT=powersave
 # Values are given in order of increasing power saving.
 # Note: Intel Skylake or newer CPU and Kernel >= 4.10 required.
 # Default: <none>
-CPU_HWP_ON_AC=balance_performance
+CPU_HWP_ON_AC=performance
 CPU_HWP_ON_BAT=balance_power
 
 # Set Intel P-state performance: 0..100 (%).
@@ -358,6 +358,8 @@ RESTORE_DEVICE_STATE_ON_STARTUP=0
 # Default: <none>
 #START_CHARGE_THRESH_BAT0=75
 #STOP_CHARGE_THRESH_BAT0=80
+START_CHARGE_THRESH_BAT0=80
+STOP_CHARGE_THRESH_BAT0=100
 # Ultrabay / Slice / Replaceable battery (values in %)
 # Default: <none>
 #START_CHARGE_THRESH_BAT1=75

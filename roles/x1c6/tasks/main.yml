@@ -1,0 +1,33 @@
+---
+- name: Install requirements for throttling fix
+  apt:
+    pkg="{{item}}"
+    state=latest 
+    cache_valid_time=3600 
+    update_cache=true
+    force=no
+  become: true
+  with_items:
+    - git
+    - build-essential
+    - python3-dev
+    - libdbus-glib-1-dev
+    - libgirepository1.0-dev
+    - libcairo2-dev
+    - python3-venv
+    - python3-wheel
+
+- name: git clone fix
+  git:
+    repo: https://github.com/erpalma/lenovo-throttling-fix.git
+    dest: /tmp/lenovo-throttling-fix
+    clone: yes
+
+- name: install fix
+  command: "sh /tmp/lenovo-throttling-fix/install.sh"
+  become: true
+
+- name: Upload customized config
+  copy:
+    src: "{{ role_path }}/files/lenovo_fix.conf"
+    dest: "/etc/lenovo_fix.conf"
