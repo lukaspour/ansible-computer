@@ -2,7 +2,7 @@
 - name: Add TLP source repository
   apt_repository:
     repo: 'ppa:linrunner/tlp'
-    codename: "{{ ubuntu_version }}"
+    codename: "{{ubuntu_version}}"
 
 - name: Remove conflicting packages
   apt:
@@ -26,9 +26,11 @@
   with_items:
     - tlp
     - tlp-rdw
+    - acpi-call-dkms
+    - tp-smapi-dkms
+    - acpi-call-dkms
     - powertop
     - smartmontools
-    - linux-tools-generic
 
 - name: Add TLP config
   copy:

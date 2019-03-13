@@ -34,6 +34,7 @@
 
 - hosts: laptop
   vars:
+    ubuntu_version: "bionic"
   roles:
     - {role: 'laptop', tags: 'laptop', 'all'}
     - {role: 'wwan', tags: 'wwan', 'all'} # FIX WWAN ON DELL E7440
