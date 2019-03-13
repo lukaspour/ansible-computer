@@ -14,23 +14,30 @@
     name: user.email
     scope: global
     value: "{{git_email}}"
+  become: true
+  become_user: "{{username}}"
 
 - git_config:
     name: user.name
     scope: global
     value: "{{git_user}}"
+  become: true
+  become_user: "{{username}}"
 
 - git_config:
     name: push.default
     scope: global
     value: simple
+  become: true
+  become_user: "{{username}}"
 
 - name: git clone git prompt
   git:
     repo: git://github.com/jimeh/git-aware-prompt.git
     dest: ~/.bash
     clone: yes
-  become: false
+  become: true
+  become_user: "{{username}}"
 
 - name: setup .bashrc
   blockinfile:

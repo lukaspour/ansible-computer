@@ -284,7 +284,7 @@ USB_AUTOSUSPEND=1
 # Bluetooth devices are excluded from USB autosuspend:
 #   0=do not exclude, 1=exclude.
 # Default: 0
-USB_BLACKLIST_BTUSB=0
+USB_BLACKLIST_BTUSB=1
 
 # Phone devices are excluded from USB autosuspend:
 #   0=do not exclude, 1=exclude (enable charging).
