@@ -59,3 +59,10 @@
     src: "{{ role_path }}/files/daemon.json"
     dest: "/etc/docker/daemon.json"
 
+- name: disable docker autostart to save battery
+  command: systemctl disable docker.service && systemctl disable docker.socket
+  become: true
+
+- name: allow this user to run docker as root
+  command: usermod -aG docker {{ username }}
+  become: true
