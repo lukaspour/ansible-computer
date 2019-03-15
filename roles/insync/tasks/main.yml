@@ -37,10 +37,7 @@
     mode: 0755
   with_items:
     - Desktop
-    - Pictures
     - Documents
-    - Music
-    - Videos
     - .ssh
     - .openvpn
 
@@ -51,4 +48,6 @@
   with_items:
     - Templates
     - Public
+    - Music
+
 
