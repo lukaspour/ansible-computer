@@ -1,6 +1,6 @@
 ---
 - name: Install package
-  command: snap install skype --classic
+  command: snap install skype --channel=insider/stable --classic
 
 #- name: Setup autostart
 #  copy:
