@@ -50,28 +50,3 @@
     group: "{{username}}"
     mode: 0755
 
-- name: create directory .git/hooks
-  file:
-    path: ~/.git/hooks
-    state: directory
-    owner: "{{username}}"
-    group: "{{username}}"
-    mode: 0755
-    recurse: yes
-
-- name: Setup git commit-msg hook
-  copy:
-    src: "{{ role_path }}/files/commit-msg"
-    dest: "~/.git/hooks/commit-msg"
-    owner: "{{username}}"
-    group: "{{username}}"
-    mode: 0755
-
-- name: Setup git pre-commit hook
-  copy:
-    src: "{{ role_path }}/files/pre-commit"
-    dest: "~/.git/hooks/pre-commit"
-    owner: "{{username}}"
-    group: "{{username}}"
-    mode: 0755
-
