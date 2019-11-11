@@ -94,6 +94,7 @@
     - rdesktop
     - python-setuptools
     - dconf-editor
+    - tmux
 
 - name: Install brew packages
   command: brew install terragrunt terraform pre-commit vaulted
