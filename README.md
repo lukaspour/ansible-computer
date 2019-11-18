@@ -4,7 +4,7 @@ tested on linux mint mate/cinnamon 19.2 64bit
 
 ```
 sudo apt install git
-git clone https://github.com:lukaspour/ansible-computer.git
+git clone https://github.com/lukaspour/ansible-computer.git
 cd ansible-laptop
 
 ./bootstrap.sh computer all
