@@ -1,6 +1,6 @@
 !PUBLIC REPOSITORY!
 
-tested on linux mint mate/cinnamon 19.2 64bit
+tested on linux mint cinnamon 19.2 64bit
 
 ```
 sudo apt install git
