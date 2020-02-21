@@ -191,6 +191,14 @@
     opts: rw,nodev,nosuid,size=2048M
     state: mounted
 
+- name: setup Downloads as ramdisk
+  mount:
+    path: ~/Downloads
+    src: tmpfs
+    fstype: tmpfs
+    opts: rw,nodev,nosuid,size=4096M
+    state: mounted
+
 - name: setup /var/tmp as ramdisk
   mount:
     path: /var/tmp
@@ -212,9 +220,9 @@
       127.0.0.1 seznam.cz www.seznam.cz
       127.0.0.1 amateri.cz www.amateri.cz
 
-- name: setup clutter
-  blockinfile:
-    path: /etc/environment
-    block: |
-      CLUTTER_VBLANK=True
+#- name: setup clutter
+#  blockinfile:
+#    path: /etc/environment
+#    block: |
+#      CLUTTER_VBLANK=True
 
