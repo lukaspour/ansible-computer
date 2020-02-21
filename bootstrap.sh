@@ -9,7 +9,7 @@ unamestr=$(uname)
 # debian, ubuntu, mint etc.
 if [[ $unamestr == "Linux"  && -f $(which apt-get) ]]; then
     sudo apt install -y software-properties-common build-essential curl file git
-    sudo apt-add-repository -y --update ppa:ansible/ansible
+    sudo apt-add-repository -y -u ppa:ansible/ansible
     sudo apt install --yes ansible python-jmespath
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
     test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
