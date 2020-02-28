@@ -12,13 +12,19 @@ if [[ $unamestr == "Linux"  && -f $(which apt-get) ]]; then
     sudo apt-add-repository -y ppa:ansible/ansible
     sudo apt update
     sudo apt install --yes ansible python-jmespath
+fi
+
+if brew list ; then
+    echo "brew command succeeded, skipping"
+else
+    echo "brew command failed, configuring"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
     test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
     test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-    test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-    brew install hello
-    echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+    test -r ~/.bashrc && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+    echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bashrc
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    brew install gcc
 fi
 
 sudo ansible-playbook -c local setup.yml -vv -i "$host", --tags "$tag"
-

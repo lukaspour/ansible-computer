@@ -1,17 +1,4 @@
 ---
-- name: add repository keys
-  apt_key:
-      url: "{{item}}"
-      state: present
-  with_items:
-    - https://www.virtualbox.org/download/oracle_vbox_2016.asc
-    - https://www.virtualbox.org/download/oracle_vbox.asc  
-
-- name: Add source repository
-  apt_repository:
-    repo: deb http://download.virtualbox.org/virtualbox/debian {{ ubuntu_version }} contrib
-    state: present
-
 - name: Install Package
   apt:
     pkg="{{item}}"
@@ -21,6 +8,6 @@
     force=no
   become: true
   with_items:
-    - virtualbox-5.2
-    - dkms
+    - virtualbox
+
 
