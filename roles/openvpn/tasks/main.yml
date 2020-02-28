@@ -24,11 +24,3 @@
     name: network-manager
     state: restarted
 
-- name: Setup autostart
-  copy:
-    src: "{{ role_path }}/files/OpenVPN.desktop"
-    dest: "~/.config/autostart/OpenVPN.desktop"
-    owner: "{{username}}"
-    group: "{{username}}"
-    mode: 0644
-

@@ -29,14 +29,14 @@
     - tlp-rdw
     - acpi-call-dkms
     - tp-smapi-dkms
-    - acpi-call-dkms
     - powertop
     - smartmontools
+    - ethtool
 
 - name: Add TLP config
   copy:
-    src: "{{ role_path }}/files/tlp"
-    dest: "/etc/default/tlp"
+    src: "{{ role_path }}/files/tlp.conf"
+    dest: "/etc/tlp.conf"
     owner: root
     group: root
     mode: 0644

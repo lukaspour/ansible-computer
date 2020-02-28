@@ -28,6 +28,18 @@
   command: "sh /tmp/lenovo-throttling-fix/install.sh"
   become: true
 
+- name: disable thermald service
+  command: "systemctl stop thermald.service"
+  become: true
+
+- name: disable thermald service
+  command: "systemctl disable thermald.service"
+  become: true
+
+- name: disable thermald service
+  command: "systemctl mask thermald.service"
+  become: true
+
 - name: Upload customized config
   copy:
     src: "{{ role_path }}/files/lenovo_fix.conf"

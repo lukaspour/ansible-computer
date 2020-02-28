@@ -6,7 +6,7 @@
     git_user: "Lukas Pour"
     git_email: "lukaspour@gmail.com"
     insync_folder: "lukaspour@gmail.com"
-    docker_compose_version: "1.24.1"
+    docker_compose_version: "1.25.4"
     ubuntu_version: "eoan"
   roles:
     - {role: 'common', tags: 'common', 'all'}
@@ -14,7 +14,8 @@
     - {role: 'slack', tags: 'slack', 'all'}
     - {role: 'insync', tags: 'insync', 'all'}
 #    - {role: 'insync-caja', tags: 'insync-caja', 'all'} #ONLY FOR MATE
-    - {role: 'insync-nemo', tags: 'insync-nemo', 'all'} #ONLY FOR CINNAMON
+#    - {role: 'insync-nemo', tags: 'insync-nemo', 'all'} #ONLY FOR CINNAMON
+    - {role: 'insync-nautilus', tags: 'insync-nautilus', 'all'} #ONLY FOR UNITY
     - {role: 'git', tags: 'git', 'all'}
     - {role: 'spotify', tags: 'spotify', 'all'}
     - {role: 'chrome', tags: 'chrome', 'all'}
@@ -26,18 +27,18 @@
     - {role: 'wireshark', tags: 'wireshark', 'all'}
     - {role: 'vim', tags: 'vim', 'all'}
     - {role: 'lastpass', tags: 'lastpass', 'all'}
-    - {role: 'terminator', tags: 'terminator', 'all'}
+#    - {role: 'terminator', tags: 'terminator', 'all'}
     - {role: 'telia', tags: 'telia', 'all'}
- #   - {role: 'keybase', tags: 'keybase', 'all'}
+#    - {role: 'keybase', tags: 'keybase', 'all'}
     - {role: 'pycharm', tags: 'pycharm', 'all'}
     - {role: 'openvpn', tags: 'openvpn', 'all'}
 
 - hosts: laptop
   vars:
-    ubuntu_version: "bionic"
+    ubuntu_version: "eoan"
   roles:
     - {role: 'tlp', tags: 'tlp', 'all'}
-    - {role: 'wwan', tags: 'wwan'} # FIX WWAN ON DELL E7440
+#    - {role: 'wwan', tags: 'wwan'} # FIX WWAN ON DELL E7440
     - {role: 'x1c6', tags: 'x1c6'} # FIX CPU THROTLING ON THINKPAD X1C6
 
 - hosts: computer

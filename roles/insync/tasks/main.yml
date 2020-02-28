@@ -6,7 +6,7 @@
 
 - name: Add source repository
   apt_repository:
-    repo: deb http://apt.insynchq.com/ubuntu {{ ubuntu_version }} non-free contrib
+    repo: deb http://apt.insync.io/ubuntu {{ ubuntu_version }} non-free contrib
     state: present
 
 - name: Install Insync
@@ -20,16 +20,10 @@
   with_items:
     - insync
 
-- name: Delete .ssh folder before creating a symlink
-  file:
-    state: absent
-    path: "~/.ssh"
-  ignore_errors: yes
-
 - name: Create Folder Symlinks
   file:
-    src: "~/{{insync_folder}}/{{item}}"
-    dest: "~/{{item}}"
+    src: "/home/{{username}}/{{insync_folder}}/{{item}}"
+    dest: "/home/{{username}}/{{item}}"
     force: yes
     state: link
     owner: "{{username}}"
@@ -38,12 +32,14 @@
   with_items:
     - Desktop
     - Documents
+    - Videos
+    - Pictures
     - .ssh
     - .openvpn
 
 - name: remove unused folders
   file:
-    path: "~/{{item}}"
+    path: "/home/{{username}}/{{item}}"
     state: absent
   with_items:
     - Templates

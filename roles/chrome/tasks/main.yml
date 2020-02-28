@@ -10,8 +10,8 @@
     deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     state: present
   when: check.rc ==1 
-  become: true
-  become_user: "{{username}}"
+#  become: true
+#  become_user: "{{username}}"
 
 - name: Change permissions
   file:

@@ -14,26 +14,7 @@
     autoremove=yes
   become: true
   with_items:
-    - iperf
-    - aisleriot
-    - webbrowser-app
-    - pidgin*
-    - brasero*
-    - mono-*
-    - ubuntu-mate-welcome
-    - rhythmbox*
-    - synapse
-    - mintinstall
-    - mintupload
-    - mintbackup
-    - mintnanny
-    - mintupdate
-    - mintwelcome
-    - ubuntu-mate-welcome
-    - synaptic
-    - xplayer*
-    - pix
-    - timeshift
+    - ibus-table
 
 - name: Install important utilities
   apt:
@@ -44,13 +25,9 @@
     force=no
   become: true
   with_items:
-    - python-jmespath
-    - bash-completion
-    - build-essential
+    - python-pip
     - linuxbrew-wrapper
     - curl
-    - file
-    - git
     - htop
     - iftop
     - iotop
@@ -62,39 +39,26 @@
     # nethogs: monitors network activity of each process
     - nethogs
     - nmap
-    # ntp: network time protocol
-    - ntp
-    # openssl: using as secured telnet: openssl s_client ....
-    - openssl
     - screen
-    - tcpdump
-    - telnet
     - tmux
-    - unzip
     - poedit
-    - mtpaint
-    - gimp
+    - krita
+    - kolourpaint
     - filezilla
-    - hplip
-    - hplip-data
-    - preload
     - ubuntu-restricted-extras
     - whois
     - curl
     - guake
     - inkscape
-    - python-pip
-    # xdotool key XF86Display - set as display shortcut
-    - xdotool
     - numlockx
     - vlc
     - libreoffice
     - libreoffice-l10n-cs
-    - snapd
     - rdesktop
-    - python-setuptools
     - dconf-editor
-    - tmux
+    - s-tui
+    - meld
+    - gnome-tweaks
 
 - name: Install brew packages
   command: brew install terragrunt terraform pre-commit vaulted
@@ -108,6 +72,8 @@
     owner: "{{username}}"
     group: "{{username}}"
     mode: 0755
+  become: yes
+  become_user: "{{username}}"
 
 - name: Create projects folder
   file:
@@ -115,7 +81,9 @@
     state: directory
     owner: "{{username}}"
     group: "{{username}}"
-    mode: 0755
+    mode: 0750
+  become: yes
+  become_user: "{{username}}"
 
 - name: Setup autostart Guake
   copy:
@@ -124,6 +92,8 @@
     owner: "{{username}}"
     group: "{{username}}"
     mode: 0644
+  become: yes
+  become_user: "{{username}}"
 
 #
 # dconf dump / > cinnamon_dump.xml
@@ -140,6 +110,7 @@
       - awscli
       - saws
       - mycli
+      - wheel
 
 - name: "Mount options for /"
   mount:
@@ -193,7 +164,7 @@
 
 - name: setup Downloads as ramdisk
   mount:
-    path: ~/Downloads
+    path: /home/{{username}}/Downloads
     src: tmpfs
     fstype: tmpfs
     opts: rw,nodev,nosuid,size=4096M
@@ -202,7 +173,7 @@
 - name: setup /var/tmp as ramdisk
   mount:
     path: /var/tmp
-    src: /tmp
+    src: tmpfs
     fstype: tmpfs
     opts: rw,nodev,nosuid,size=2048M
     state: mounted
@@ -219,10 +190,3 @@
       127.0.0.1 super.cz www.super.cz
       127.0.0.1 seznam.cz www.seznam.cz
       127.0.0.1 amateri.cz www.amateri.cz
-
-#- name: setup clutter
-#  blockinfile:
-#    path: /etc/environment
-#    block: |
-#      CLUTTER_VBLANK=True
-

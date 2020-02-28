@@ -1,4 +1,9 @@
 ---
+- name: Add Shutter source repository
+  apt_repository:
+    repo: 'ppa:linuxuprising/shutter'
+    codename: "{{ubuntu_version}}"
+
 - name: Install Package
   apt:
     pkg="{{item}}"
@@ -9,18 +14,6 @@
   with_items:
     - shutter
 
-- name: Install local libgoocanvas-common_1.0.0-1_all.deb package
-  apt:
-    deb: "{{ role_path }}/files/libgoocanvas-common_1.0.0-1_all.deb"
-
-- name: Install local libgoocanvas3_1.0.0-1_amd64.deb package
-  apt:
-    deb: "{{ role_path }}/files/libgoocanvas3_1.0.0-1_amd64.deb"
-
-- name: Install local libgoo-canvas-perl_0.06-2ubuntu3_amd64.deb package
-  apt:
-    deb: "{{ role_path }}/files/libgoo-canvas-perl_0.06-2ubuntu3_amd64.deb"
-
 - name: Setup autostart
   copy:
     src: "{{ role_path }}/files/shutter.desktop"
@@ -28,4 +21,7 @@
     owner: "{{username}}"
     group: "{{username}}"
     mode: 0644
+  become: yes
+  become_user: "{{username}}"
+
 

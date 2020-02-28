@@ -10,6 +10,8 @@
     - docker
     - docker-engine
     - docker.io
+    - containerd
+    - runc
 
 - name: Add repository key
   apt_key:
@@ -18,7 +20,7 @@
 
 - name: Add source repository
   apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ubuntu_version }} stable
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu disco stable
     state: present
 
 - name: Install docker
@@ -31,6 +33,8 @@
   become: true
   with_items:
     - docker-ce
+    - docker-ce-cli
+    - containerd.io
 
 - name: Ensure docker-compose is installed and available
   get_url: 
@@ -60,7 +64,15 @@
     dest: "/etc/docker/daemon.json"
 
 - name: disable docker autostart to save battery
-  command: systemctl disable docker.service && systemctl disable docker.socket
+  command: systemctl disable docker.service
+  become: true
+
+- name: disable docker autostart to save battery
+  command: systemctl disable docker.socket
+  become: true
+
+- name: disable docker autostart to save battery
+  command: systemctl disable containerd.service
   become: true
 
 - name: allow this user to run docker as root
