@@ -61,8 +61,13 @@
     - gnome-tweaks
 
 - name: Install brew packages
-  command: brew install terragrunt terraform pre-commit vaulted
+  command: brew install terragrunt pre-commit vaulted tfenv
   become: yes
+  become_user: "{{username}}"
+
+- name: Install Terraform
+  command: tfenv install latest
+  become: true
   become_user: "{{username}}"
 
 - name: Create autostart folder
