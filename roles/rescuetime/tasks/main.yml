@@ -1,0 +1,19 @@
+---
+- name: Install Chrome
+  apt:
+    deb: https://www.rescuetime.com/installers/rescuetime_current_amd64.deb
+    state: present
+  when: check.rc ==1 
+#  become: true
+#  become_user: "{{username}}"
+
+- name: Setup autostart
+  copy:
+    src: "{{ role_path }}/files/rescuetime.desktop"
+    dest: "~/.config/autostart/rescuetime.desktop"
+    owner: "{{username}}"
+    group: "{{username}}"
+    mode: 0644
+  become: yes
+  become_user: "{{username}}"
+

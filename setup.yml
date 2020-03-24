@@ -27,6 +27,7 @@
     - {role: 'wireshark', tags: 'wireshark', 'all'}
     - {role: 'vim', tags: 'vim', 'all'}
     - {role: 'lastpass', tags: 'lastpass', 'all'}
+    - {role: 'rescuetime', tags: 'rescuetime', 'all'}
 #    - {role: 'terminator', tags: 'terminator', 'all'}
     - {role: 'telia', tags: 'telia', 'all'}
 #    - {role: 'keybase', tags: 'keybase', 'all'}
