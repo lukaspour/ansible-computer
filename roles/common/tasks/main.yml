@@ -26,7 +26,7 @@
   become: true
   with_items:
     - python3-pip
-    - linuxbrew-wrapper
+#    - linuxbrew-wrapper
     - curl
     - htop
     - iftop
