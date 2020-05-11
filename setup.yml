@@ -23,7 +23,6 @@
     - {role: 'virtualbox', tags: 'virtualbox', 'all'}
     - {role: 'shutter', tags: 'shutter', 'all'}
     - {role: 'simplescreenrecorder', tags: 'simplescreenrecorder', 'all'}
-    - {role: 'wireshark', tags: 'wireshark', 'all'}
     - {role: 'vim', tags: 'vim', 'all'}
     - {role: 'lastpass', tags: 'lastpass', 'all'}
     - {role: 'rescuetime', tags: 'rescuetime', 'all'}
