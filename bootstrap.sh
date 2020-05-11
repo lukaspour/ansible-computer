@@ -26,7 +26,8 @@ else
     echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bashrc
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
-    brew install terragrunt pre-commit vaulted tfenv
+    brew install pre-commit vaulted tfenv
     tfenv install latest
+    brew install terragrunt
 
 sudo ansible-playbook -c local setup.yml -vv -i "$host", --tags "$tag"
