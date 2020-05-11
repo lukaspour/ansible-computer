@@ -25,7 +25,7 @@
     force=no
   become: true
   with_items:
-    - python-pip
+    - python3-pip
     - linuxbrew-wrapper
     - curl
     - htop

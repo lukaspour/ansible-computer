@@ -11,7 +11,7 @@ if [[ $unamestr == "Linux"  && -f $(which apt-get) ]]; then
     sudo apt install -y software-properties-common build-essential curl file git
     sudo apt-add-repository -y ppa:ansible/ansible
     sudo apt update
-    sudo apt install --yes python-jmespath
+    sudo apt install --yes python3-jmespath
     sudo apt install --yes ansible
 fi
 
