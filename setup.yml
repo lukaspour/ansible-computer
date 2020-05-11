@@ -5,16 +5,15 @@
     username: lukas
     git_user: "Lukas Pour"
     git_email: "lukaspour@gmail.com"
-    insync_folder: "lukaspour@gmail.com"
-    docker_compose_version: "1.25.4"
-    ubuntu_version: "eoan"
+    insync_folder: "G Drive lukaspour@gmail.com"
+    docker_compose_version: "1.25.5"
+    ubuntu_version: "focal"
+    docker_repository_name: "eoan"
   roles:
     - {role: 'common', tags: 'common', 'all'}
     - {role: 'docker', tags: 'docker', 'all'}
     - {role: 'slack', tags: 'slack', 'all'}
     - {role: 'insync', tags: 'insync', 'all'}
-#    - {role: 'insync-caja', tags: 'insync-caja', 'all'} #ONLY FOR MATE
-#    - {role: 'insync-nemo', tags: 'insync-nemo', 'all'} #ONLY FOR CINNAMON
     - {role: 'insync-nautilus', tags: 'insync-nautilus', 'all'} #ONLY FOR UNITY
     - {role: 'git', tags: 'git', 'all'}
     - {role: 'spotify', tags: 'spotify', 'all'}

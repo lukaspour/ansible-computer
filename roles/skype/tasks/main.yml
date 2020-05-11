@@ -1,12 +1,12 @@
 ---
-- name: Install package
-  command: snap install skype --channel=insider/stable --classic
+- name: check if package is already installed
+  command: dpkg-query -W skype*
+  register: check
+  failed_when: false
+  changed_when: false
 
-#- name: Setup autostart
-#  copy:
-#    src: "{{ role_path }}/files/skypeforlinux.desktop"
-#    dest: "~/.config/autostart/skypeforlinux.desktop"
-#    owner: "{{username}}"
-#    group: "{{username}}"
-#    mode: 0644
-
+- name: Install Chrome
+  apt:
+    deb: https://go.skype.com/skypeforlinux-64.deb
+    state: present
+  when: check.rc ==1

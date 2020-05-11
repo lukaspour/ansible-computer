@@ -20,3 +20,11 @@
     group: "{{username}}"
     recurse: yes
     state: directory
+
+- name: Change permissions
+  file:
+    path: /home/lukas/.cache/google-chrome
+    owner: "{{username}}"
+    group: "{{username}}"
+    recurse: yes
+    state: directory

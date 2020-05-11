@@ -20,7 +20,7 @@
 
 - name: Add source repository
   apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu disco stable
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ docker_repository_name }} stable
     state: present
 
 - name: Install docker
