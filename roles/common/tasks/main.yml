@@ -59,6 +59,7 @@
     - s-tui
     - meld
     - gnome-tweaks
+    - usb-creator-gtk
 
 - name: Install brew packages
   command: brew install terragrunt pre-commit vaulted tfenv
