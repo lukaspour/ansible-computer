@@ -25,7 +25,8 @@ else
     test -r ~/.bashrc && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
     echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bashrc
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-    brew install gcc
+    brew install terragrunt pre-commit vaulted tfenv
+    tfenv install latest
 fi
 
 sudo ansible-playbook -c local setup.yml -vv -i "$host", --tags "$tag"

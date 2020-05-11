@@ -61,15 +61,15 @@
     - gnome-tweaks
     - usb-creator-gtk
 
-- name: Install brew packages
-  command: brew install terragrunt pre-commit vaulted tfenv
-  become: yes
-  become_user: "{{username}}"
+#- name: Install brew packages
+#  command: brew install terragrunt pre-commit vaulted tfenv
+#  become: yes
+#  become_user: "{{username}}"
 
-- name: Install Terraform
-  command: tfenv install latest
-  become: true
-  become_user: "{{username}}"
+#- name: Install Terraform
+#  command: tfenv install latest
+#  become: true
+#  become_user: "{{username}}"
 
 - name: Create autostart folder
   file:
