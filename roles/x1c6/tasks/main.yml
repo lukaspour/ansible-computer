@@ -17,6 +17,7 @@
     - python3-venv
     - python3-wheel
     - intel-microcode
+    - thinkfan
 
 - name: git clone fix
   git:
