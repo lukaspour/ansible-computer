@@ -7,6 +7,6 @@
 
 - name: Install Chrome
   apt:
-    deb: https://go.skype.com/skypeforlinux-64.deb
+    deb: https://repo.skype.com/latest/skypeforlinux-64.deb
     state: present
   when: check.rc ==1

@@ -61,16 +61,7 @@
     - gnome-tweaks
     - usb-creator-gtk
     - wireshark
-
-#- name: Install brew packages
-#  command: brew install terragrunt pre-commit vaulted tfenv
-#  become: yes
-#  become_user: "{{username}}"
-
-#- name: Install Terraform
-#  command: tfenv install latest
-#  become: true
-#  become_user: "{{username}}"
+    - hplip-gui
 
 - name: Create autostart folder
   file:
@@ -104,6 +95,7 @@
 
 - name: "Install PIP packages."
   pip:
+    executable: pip3
     umask: "0022"
     name: 
       - awscli

@@ -1,6 +1,13 @@
 ---
-- name: Install slack
-  command: snap install slack --classic
+#- name: Install slack
+#  command: snap install slack --classic
+
+- name: Install Slack
+  apt:
+    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-{{ slack_version }}-amd64.deb
+    state: present
+  ignore_errors: yes
+
 
 #- name: Setup autostart
 #  copy:

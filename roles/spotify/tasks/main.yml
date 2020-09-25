@@ -1,4 +1,21 @@
 ---
-- name: check if package is already installed
-  command: snap install spotify
+- name: Add an Apt signing key
+  apt_key:
+    url: https://download.spotify.com/debian/pubkey.gpg
+    state: present
 
+- name: Add an Apt signing key
+  apt_key:
+    url: https://download.spotify.com/debian/pubkey_0D811D58.gpg
+    state: present
+
+- apt_repository:
+    repo: deb http://repository.spotify.com stable non-free
+    state: present
+
+
+- name: Update the repository cache and install
+  apt:
+    name: spotify-client
+    state: latest
+    update_cache: yes

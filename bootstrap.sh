@@ -9,7 +9,6 @@ unamestr=$(uname)
 # debian, ubuntu, mint etc.
 if [[ $unamestr == "Linux"  && -f $(which apt-get) ]]; then
     sudo apt install -y software-properties-common build-essential curl file git
-#    sudo apt-add-repository -y ppa:ansible/ansible
     sudo apt update
     sudo apt install --yes python3-jmespath
     sudo apt install --yes ansible
@@ -26,8 +25,6 @@ else
     echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bashrc
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
-    brew install pre-commit vaulted tfenv
-    tfenv install latest
-    brew install terragrunt
+    brew install pre-commit vaulted terraform terragrunt
 
 sudo ansible-playbook -c local setup.yml -vv -i "$host", --tags "$tag"

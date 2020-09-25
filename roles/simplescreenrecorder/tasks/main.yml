@@ -1,4 +1,11 @@
 ---
-- name: install snap package
-  command: snap install simplescreenrecorder-brlin
+- apt_repository:
+    repo: 'ppa:maarten-baert/simplescreenrecorder'
+    codename: "{{ubuntu_version}}"
+
+- name: Update the repository cache and install
+  apt:
+    name: simplescreenrecorder
+    state: latest
+    update_cache: yes
 

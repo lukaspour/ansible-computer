@@ -5,36 +5,37 @@
     username: lukas
     git_user: "Lukas Pour"
     git_email: "lukaspour@gmail.com"
-    insync_folder: "G Drive lukaspour@gmail.com"
-    docker_compose_version: "1.25.5"
+    insync_folder: "gdrive"
+    docker_compose_version: "1.27.1"
     ubuntu_version: "focal"
-    docker_repository_name: "eoan"
+    docker_repository_name: "focal"
+    slack_version: "4.8.0"
   roles:
     - {role: 'common', tags: 'common', 'all'}
     - {role: 'docker', tags: 'docker', 'all'}
     - {role: 'slack', tags: 'slack', 'all'}
     - {role: 'insync', tags: 'insync', 'all'}
-    - {role: 'insync-nautilus', tags: 'insync-nautilus', 'all'} #ONLY FOR UNITY
+    - {role: 'insync-nemo', tags: 'insync-nemo', 'all'} #ONLY FOR CINNAMON
     - {role: 'git', tags: 'git', 'all'}
     - {role: 'spotify', tags: 'spotify', 'all'}
     - {role: 'chrome', tags: 'chrome', 'all'}
     - {role: 'skype', tags: 'skype', 'all'}
     - {role: 'teamviewer', tags: 'teamviewer', 'all'}
-    - {role: 'virtualbox', tags: 'virtualbox', 'all'}
+#    - {role: 'virtualbox', tags: 'virtualbox', 'all'}
     - {role: 'shutter', tags: 'shutter', 'all'}
     - {role: 'simplescreenrecorder', tags: 'simplescreenrecorder', 'all'}
     - {role: 'vim', tags: 'vim', 'all'}
     - {role: 'lastpass', tags: 'lastpass', 'all'}
-    - {role: 'rescuetime', tags: 'rescuetime', 'all'}
+#    - {role: 'rescuetime', tags: 'rescuetime', 'all'}
 #    - {role: 'terminator', tags: 'terminator', 'all'}
-    - {role: 'telia', tags: 'telia', 'all'}
+#    - {role: 'telia', tags: 'telia', 'all'}
 #    - {role: 'keybase', tags: 'keybase', 'all'}
-    - {role: 'pycharm', tags: 'pycharm', 'all'}
+#    - {role: 'pycharm', tags: 'pycharm', 'all'}
     - {role: 'openvpn', tags: 'openvpn', 'all'}
 
 - hosts: laptop
   vars:
-    ubuntu_version: "eoan"
+    ubuntu_version: "focal"
   roles:
     - {role: 'tlp', tags: 'tlp', 'all'}
 #    - {role: 'wwan', tags: 'wwan'} # FIX WWAN ON DELL E7440
