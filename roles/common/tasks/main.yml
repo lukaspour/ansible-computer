@@ -158,7 +158,7 @@
     path: /home/{{username}}/Downloads
     src: tmpfs
     fstype: tmpfs
-    opts: rw,nodev,nosuid,size=4096M
+    opts: rw,nodev,nosuid,size=8192M
     state: mounted
 
 - name: setup /var/tmp as ramdisk
@@ -179,5 +179,4 @@
       127.0.0.1 novinky.cz www.novinky.cz
       127.0.0.1 tn.cz www.tn.cz
       127.0.0.1 super.cz www.super.cz
-      127.0.0.1 seznam.cz www.seznam.cz
       127.0.0.1 amateri.cz www.amateri.cz

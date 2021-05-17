@@ -68,10 +68,6 @@
   become: true
 
 - name: disable docker autostart to save battery
-  command: systemctl disable docker.socket
-  become: true
-
-- name: disable docker autostart to save battery
   command: systemctl disable containerd.service
   become: true
 

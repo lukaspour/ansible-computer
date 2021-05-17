@@ -6,10 +6,10 @@
     git_user: "Lukas Pour"
     git_email: "lukaspour@gmail.com"
     insync_folder: "gdrive"
-    docker_compose_version: "1.27.1"
-    ubuntu_version: "focal"
-    docker_repository_name: "focal"
-    slack_version: "4.8.0"
+    docker_compose_version: "1.29.2"
+    ubuntu_version: "hirsute"
+    docker_repository_name: "hirsute"
+    slack_version: "4.15.0"
   roles:
     - {role: 'common', tags: 'common', 'all'}
     - {role: 'docker', tags: 'docker', 'all'}
@@ -25,7 +25,7 @@
     - {role: 'shutter', tags: 'shutter', 'all'}
     - {role: 'simplescreenrecorder', tags: 'simplescreenrecorder', 'all'}
     - {role: 'vim', tags: 'vim', 'all'}
-    - {role: 'lastpass', tags: 'lastpass', 'all'}
+#    - {role: 'lastpass', tags: 'lastpass', 'all'}
 #    - {role: 'rescuetime', tags: 'rescuetime', 'all'}
 #    - {role: 'terminator', tags: 'terminator', 'all'}
 #    - {role: 'telia', tags: 'telia', 'all'}
@@ -35,7 +35,7 @@
 
 - hosts: laptop
   vars:
-    ubuntu_version: "focal"
+    ubuntu_version: "hirsute"
   roles:
     - {role: 'tlp', tags: 'tlp', 'all'}
 #    - {role: 'wwan', tags: 'wwan'} # FIX WWAN ON DELL E7440
